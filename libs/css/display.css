@@ -10,16 +10,9 @@ header > h1 {
     color: #757575;
     margin: 0 0 0.2em;
 }
-header > span {
-    text-transform: capitalize;
-}
-section {
-    position: relative;
-    padding: 5rem 2rem;
-}
-.details {
-    background: #263238;
-}
+header > span {text-transform: capitalize;}
+section {position: relative;}
+.details {background: #263238;}
 .details ul {
     display: flex;
     justify-content: space-between;
@@ -52,8 +45,14 @@ section > div {
 }
 footer {
     background: #111619;
-    padding: 5rem 0;
     text-align: center;
+}
+footer, section {
+    padding: 5rem 2rem;
 }
 footer > a {display: inline-block;opacity: 0.7;}
 footer > a > img {vertical-align: top;}
+
+@media only screen and (max-width: 800px) {
+
+}
