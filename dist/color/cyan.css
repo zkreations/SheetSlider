@@ -1,0 +1,11 @@
+.sheet-slider li.tab > div a {color: #00BCD4;}
+.sheet-slider li.tab > div a:hover {color: #80DEEA;}
+
+#s1:checked ~ .sh-btns label:nth-child(1),
+#s2:checked ~ .sh-btns label:nth-child(2),
+#s3:checked ~ .sh-btns label:nth-child(3),
+#s4:checked ~ .sh-btns label:nth-child(4),
+#s5:checked ~ .sh-btns label:nth-child(5),
+#s6:checked ~ .sh-btns label:nth-child(6),
+#s7:checked ~ .sh-btns label:nth-child(7),
+#s8:checked ~ .sh-btns label:nth-child(8) {background-color: #00BCD4;}
