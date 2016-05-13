@@ -1,6 +1,6 @@
 body {background: #37474F;}
 header {
-    padding: 3rem 0 2rem;
+    padding: 3rem 2rem 2rem;
     text-align: center;
     background: #fff;
     color: #969696;
@@ -15,7 +15,7 @@ header > span {
 }
 section {
     position: relative;
-    padding: 5rem 0;
+    padding: 5rem 2rem;
 }
 .details {
     background: #263238;
