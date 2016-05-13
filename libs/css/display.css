@@ -10,13 +10,16 @@ header > h1 {
     color: #757575;
     margin: 0 0 0.2em;
 }
-header > span {text-transform: capitalize;}
+header > span {
+    text-transform: capitalize;
+    font-size: 1em;
+}
 section {position: relative;}
 .details {background: #263238;}
 .details ul {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     color: rgba(255, 255, 255, 0.4);
     font-size: 16px;
 }
@@ -26,7 +29,7 @@ section {position: relative;}
     width: 33.3333%;
 }
 .details ul li > i {
-    font-size: 4rem;
+    font-size: 4em;
     color: rgba(0,0,0,0.5);
     margin-bottom: 10px;
 }
@@ -53,6 +56,11 @@ footer, section {
 footer > a {display: inline-block;opacity: 0.7;}
 footer > a > img {vertical-align: top;}
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 768px) {
+footer, section {padding: 3rem 2rem;}
+.details ul {font-size: 14px;}
+}
+
+@media only screen and (max-width: 768px) {
 
 }
