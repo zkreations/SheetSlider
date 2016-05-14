@@ -8,6 +8,7 @@
     width: 100%;
     overflow: hidden;
     -webkit-font-smoothing: antialiased;
+    background: #263238;
 }
 /*Se aplica para todo dentro del slider*/
 .sheet-slider * {
@@ -20,21 +21,11 @@
 =>Algunas estilos para comenzar
 */
 .sheet-slider > input {display: none;}
-.sheet-slider img {min-height: 100%;vertical-align: top;}
+.sheet-slider img {width: 100%;vertical-align: top;max-width: none;background: none;padding: 0;margin: 0;border: 0;    border-radius: 0;}
 .sheet-slider li.tab {display:block;}
-.sheet-slider li.tab > div h3 {font-size: 2em;margin: 0;font-weight: 700;}
-.sheet-slider li.tab > div a {color: #009688;font-weight: 500;text-decoration: none;}
-.sheet-slider li.tab > div a:hover {color: #4DB6AC;text-decoration: none;}
 .sheet-slider .sh-btns {bottom: 0;left: 0;margin: 0 auto;position: absolute;right: 0;}
 
-/*Todas las clases que usan animacion estaran aqui*/
-.sh-arrows label, .sheet-slider ul {
-   -moz-transition: width .5s;
-   -ms-transition: width .5s;
-   -o-transition: width .5s;
-   -webkit-transition: width .5s;
-   transition: width .5s;
-}
+/*Todas las reglas que usan animacion estaran aqui*/
 .sheet-slider ul {
    -moz-transition: left .7s cubic-bezier(0.54, 0, 0.1, 1);
    -ms-transition: left .7s cubic-bezier(0.54, 0, 0.1, 1);
@@ -42,27 +33,26 @@
    -webkit-transition: left .7s cubic-bezier(0.54, 0, 0.1, 1);
    transition: left .7s cubic-bezier(0.54, 0, 0.1, 1);
 }
-.sh-arrows {
-   -moz-transition: all .3s;
-   -ms-transition: all .3s;
-   -o-transition: all .3s;
-   -webkit-transition: all .3s;
-   transition: all .3s;
+.sh-arrows, .sh-arrows label {
+   -moz-transition: opacity .3s, right .3s, width .5s;
+   -ms-transition: opacity .3s, right .3s, width .5s;
+   -o-transition: opacity .3s, right .3s, width .5s;
+   -webkit-transition: opacity .3s, right .3s, width .5s;
+   transition: opacity .3s, right .3s, width .5s;
 }
 li.tab > div {
-   -moz-transition: opacity .7s ease .6s, top .7s ease .6s;
-   -ms-transition: opacity .7s ease .6s, top .7s ease .6s;
-   -o-transition: opacity .7s ease .6s, top .7s ease .6s;
-   -webkit-transition: opacity .7s ease .6s, top .7s ease .6s;
-   transition: opacity .7s ease .6s, top .7s ease .6s;
+   -moz-transition: opacity .7s ease .5s, top .7s ease .5s;
+   -ms-transition: opacity .7s ease .5s, top .7s ease .5s;
+   -o-transition: opacity .7s ease .5s, top .7s ease .5s;
+   -webkit-transition: opacity .7s ease .5s, top .7s ease .5s;
+   transition: opacity .7s ease .5s, top .7s ease .5s;
 }
 /*
 =>Ahora si, lo que nos intersa
 */
 .sheet-slider ul {
-    background-color: #263238;
-    height: 400px;
     position: relative;
+    height: 420px;
 }
 .sheet-slider ul > li.tab {
     position: absolute;
@@ -71,23 +61,29 @@ li.tab > div {
     vertical-align: top;
     width: 100%;
     height: 100%;
+    bottom: 0;
 }
+
 /*estilo para textos*/
 .sheet-slider li.tab > div {
     left: 0;
-    top: 2em;
+    top: 1em;
     position: absolute;
     padding-left: 3em;
     padding-top: 2.5em;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3), 0 1px 5px rgba(0, 0, 0, 0.16);
-    max-width: 500px;
+    max-width: 80%;
     opacity: 0;
 }
+.sheet-slider li.tab > div a {color: #009688;font-weight: 500;text-decoration: none;}
+.sheet-slider li.tab > div a:hover {color: #4DB6AC;text-decoration: none;}
+.sheet-slider li.tab > div h3 {font-size: 2em;margin: 0;font-weight: 700;}
+.sheet-slider li.tab > div span {font-size: 1.1em;font-weight: 500;}
+
 /*para los botones*/
 .sheet-slider .sh-btns {
     width: 100%;
     z-index: 35;
-    height: 7px;
     padding: 0 3em;
     display: -webkit-flex;
     display: flex;
@@ -103,6 +99,7 @@ li.tab > div {
     cursor: pointer;
     width: 100%;
     margin: 0 2px;
+    height: 7px;
 }
 .sheet-slider .sh-btns label:hover {background-color: rgba(255, 255, 255, 0.95);}
 /*y para las flechas*/
@@ -209,12 +206,21 @@ li.tab > div {
    float: left;
 }
 
-@media only screen and (max-width: 800px) {
-
+@media only screen and (max-width: 840px) {
+.sheet-slider {font-size: 14px;}
+.sheet-slider ul {height: 350px;}
 }
-@media only screen and (max-width: 700px) {
-
+@media only screen and (max-width: 730px) {
+.sheet-slider {font-size: 13px;}
+.sheet-slider ul {height: 280px;}
+.sheet-slider .sh-arrows {right: 0;opacity: 1;bottom: 0;}
+.sheet-slider .sh-btns {display: none;}
+.sheet-slider li.tab > div {padding-left: 2em;padding-top: 1.5em;}
 }
-@media only screen and (max-width: 600px) {
-
+@media only screen and (max-width: 620px) {
+.sheet-slider li.tab > div {display: none;}
+.sheet-slider ul {height: 240px;}
+}
+@media only screen and (max-width: 510px) {
+.sheet-slider img {height: 100%;min-width: 100%;width: auto;}
 }
