@@ -61,6 +61,6 @@ footer, section {padding: 3rem 2rem;}
 .details ul {font-size: 14px;}
 }
 
-@media only screen and (max-width: 768px) {
-
+@media only screen and (max-width: 600px) {
+footer, section {padding: 3rem 1rem;}
 }
