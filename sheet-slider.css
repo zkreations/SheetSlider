@@ -25,7 +25,7 @@
 .sheet-slider li.tab {display:block;}
 .sheet-slider .sh-btns {bottom: 0;left: 0;margin: 0 auto;position: absolute;right: 0;}
 
-/*Todas las clases que usan animacion estaran aqui*/
+/*Todas las reglas que usan animacion estaran aqui*/
 .sheet-slider ul {
    -moz-transition: left .7s cubic-bezier(0.54, 0, 0.1, 1);
    -ms-transition: left .7s cubic-bezier(0.54, 0, 0.1, 1);
@@ -41,11 +41,11 @@
    transition: opacity .3s, right .3s, width .5s;
 }
 li.tab > div {
-   -moz-transition: opacity .7s ease .6s, top .7s ease .6s;
-   -ms-transition: opacity .7s ease .6s, top .7s ease .6s;
-   -o-transition: opacity .7s ease .6s, top .7s ease .6s;
-   -webkit-transition: opacity .7s ease .6s, top .7s ease .6s;
-   transition: opacity .7s ease .6s, top .7s ease .6s;
+   -moz-transition: opacity .7s ease .5s, top .7s ease .5s;
+   -ms-transition: opacity .7s ease .5s, top .7s ease .5s;
+   -o-transition: opacity .7s ease .5s, top .7s ease .5s;
+   -webkit-transition: opacity .7s ease .5s, top .7s ease .5s;
+   transition: opacity .7s ease .5s, top .7s ease .5s;
 }
 /*
 =>Ahora si, lo que nos intersa
