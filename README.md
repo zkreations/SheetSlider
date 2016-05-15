@@ -5,8 +5,7 @@
 [Descargar](https://github.com/zkreations/SheetSlider/archive/master.zip) e incluir arriba de `</head>` el codigo css.
 
 ```html
-<!--sheet slider-->
-<link type="text/css" rel="stylesheet" href="sheet-slider.min.css"/>
+<link rel="stylesheet" href="sheet-slider.min.css"/>
 ```
 
 ### Utilizar Sheet Slider
@@ -37,9 +36,8 @@ Para incluir la botonera; duplicar `<div class="sh-arrows">...</div>` y cambiar 
 
 Despues de incluir `sheet-slider.min.css` agregar el siguiente codigo.
 ```html
-<!--Opcional-->
-<link type="text/css" rel="stylesheet" href="dist/theme/darken.css"/>
-<link type="text/css" rel="stylesheet" href="dist/color/cyan.css"/>-->
+<link rel="stylesheet" href="dist/theme/darken.css"/>
+<link rel="stylesheet" href="dist/color/cyan.css"/>
 ```
 
 ## observaciones
