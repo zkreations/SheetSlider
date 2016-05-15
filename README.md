@@ -1,5 +1,7 @@
 # SheetSlider
 
+[Demostración](http://zkreations.github.io/SheetSlider/)
+
 ## Instalación
 
 [Descargar](https://github.com/zkreations/SheetSlider/archive/master.zip) e incluir arriba de `</head>` el codigo css.
