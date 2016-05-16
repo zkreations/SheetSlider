@@ -42,6 +42,7 @@ Despues de incluir `sheet-slider.min.css` agregar el siguiente codigo.
 <link rel="stylesheet" href="dist/color/cyan.css"/>
 ```
 
-## observaciones
+## Limitaciones
 
-Para incluir mas de un slider en una misma página; especificar un atributo **name** distinto.
+* Solo puede haber un slider por página, ya que se basa en la **id** del **input** y esta no puede repetirse.
+* El slider solo puede contener hasta un máximo de 8 imágenes.
