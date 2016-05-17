@@ -1,4 +1,4 @@
-/*! Sheet Slider 2.00 | Daniel Moreira - http://zkreations.com | Free to use under terms of MIT license */
+/*! Sheet Slider 2.01 | Daniel Moreira - http://zkreations.com | Free to use under terms of MIT license */
 .sheet-slider {
     font-size: 16px;
     line-height: 1.5;
@@ -79,20 +79,23 @@ li.tab > div {
 .sheet-slider li.tab > div a:hover {color: #4DB6AC;text-decoration: none;}
 .sheet-slider li.tab > div h3 {font-size: 2em;margin: 0;font-weight: 700;}
 .sheet-slider li.tab > div span {font-size: 1.1em;font-weight: 500;}
-
 /*para los botones*/
 .sheet-slider .sh-btns {
     width: 100%;
     z-index: 35;
     padding: 0 3em;
+    /*Soporte para flex*/
     display: -webkit-flex;
+    display: -moz-flex;
     display: flex;
+    /*direction*/
     -webkit-flex-direction: row;
+    -moz-flex-direction: row;
     flex-direction: row;
+    /*justify*/
     -webkit-justify-content: space-between;
-    justify-content: space-between;
-    align-items: stretch;
-    -webkit-align-items: stretch;
+       -moz-justify-content: space-between;
+            justify-content: space-between;
 }
 .sheet-slider .sh-btns label {
     background-color: rgba(255, 255, 255, 0.8);
