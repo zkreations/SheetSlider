@@ -4,7 +4,7 @@
 
 ## Version 
 
-# Sheet Slider 1.01
+### Sheet Slider 1.01
 
 * Mejora de compatibilidad con flex
 
