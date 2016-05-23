@@ -4,9 +4,10 @@
 
 ## Version 
 
-### Sheet Slider 1.01
+### Sheet Slider 1.02
 
-* Mejora de compatibilidad con flex
+* Corrección de flex en botonera.
+* Mejora de compatibilidad con flex.
 
 ## Instalación
 
