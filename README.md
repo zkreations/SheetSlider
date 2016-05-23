@@ -1,6 +1,13 @@
-# SheetSlider
+# Sheet Slider
 
 [Demostración](http://zkreations.github.io/SheetSlider/)
+
+## Version 
+
+### Sheet Slider 1.02
+
+* Corrección de flex en botonera.
+* Mejora de compatibilidad con flex.
 
 ## Instalación
 

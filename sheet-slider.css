@@ -1,4 +1,4 @@
-/*! Sheet Slider 2.01 | Daniel Moreira - http://zkreations.com | Free to use under terms of MIT license */
+/*! Sheet Slider 1.02 | Daniel Moreira - http://zkreations.com | Free to use under terms of MIT license */
 .sheet-slider {
     font-size: 16px;
     line-height: 1.5;
@@ -100,9 +100,15 @@ li.tab > div {
 .sheet-slider .sh-btns label {
     background-color: rgba(255, 255, 255, 0.8);
     cursor: pointer;
-    width: 100%;
     margin: 0 2px;
     height: 7px;
+    -webkit-flex-basis: 0px;
+       -moz-flex-basis: 0px;
+            flex-basis: 0px;
+    -webkit-flex-grow: 1;
+       -moz-flex-grow: 1;
+            flex-grow: 1;
+
 }
 .sheet-slider .sh-btns label:hover {background-color: rgba(255, 255, 255, 0.95);}
 /*y para las flechas*/
