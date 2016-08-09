@@ -4,6 +4,10 @@
 
 ## Version 
 
+### Sheet Slider 1.03
+
+* Reset en el css para evitar la sobreescritura
+
 ### Sheet Slider 1.02
 
 * Corrección de flex en botonera.
