@@ -1,236 +1,323 @@
-/*! Sheet Slider 1.03 | Daniel Abel - http://zkreations.com | Free to use under terms of MIT license */
+/*! Sheet Slider 1.0.4 | Daniel Abel - http://zkreations.com | Free to use under terms of MIT license */
+
 .sheet-slider {
     font-size: 16px;
     line-height: 1.5;
-    z-index: 30;
+    z-index: 1;
     position: relative;
-    margin: 0 auto;
     width: 100%;
     overflow: hidden;
     -webkit-font-smoothing: antialiased;
-    background: #263238;
+    background: #263238
 }
+
 /*Se aplica para todo dentro del slider*/
 .sheet-slider * {
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    color:#fff;
+    color: #fff;
+    border-radius: 0
 }
+
 /*
-=>Algunas estilos para comenzar
+=>Algunas estilos por defecto
 */
-.sheet-slider > input {display: none;}
-.sheet-slider img {width: 100%;display: block;max-width: none;background: none;padding: 0;margin: 0;border: 0;border-radius: 0;}
-.sheet-slider > ul > li.tab {display:block;padding: 0;margin: 0;list-style-type: none;}
-.sheet-slider > ul {padding: 0;margin: 0;list-style-type: none;}
-.sheet-slider .sh-btns {bottom: 0;left: 0;margin: 0 auto;position: absolute;right: 0;}
+.sheet-slider ul,
+.sheet-slider ul li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none
+}
+.sheet-slider>input {
+    display: none
+}
+.sheet-slider img {
+    width: 100%;
+    display: block;
+    max-width: none;
+    background: 0 0;
+    border: 0
+}
 
 /*Todas las reglas que usan animacion estaran aqui*/
 .sheet-slider ul {
-   -moz-transition: left .7s cubic-bezier(0.54, 0, 0.1, 1);
-   -ms-transition: left .7s cubic-bezier(0.54, 0, 0.1, 1);
-   -o-transition: left .7s cubic-bezier(0.54, 0, 0.1, 1);
-   -webkit-transition: left .7s cubic-bezier(0.54, 0, 0.1, 1);
-   transition: left .7s cubic-bezier(0.54, 0, 0.1, 1);
+    -webkit-transition: left .7s cubic-bezier(.54, 0, .1, 1);
+    transition: left .7s cubic-bezier(.54, 0, .1, 1);
+    position: relative;
+    height: 420px
 }
-.sh-arrows, .sh-arrows label {
-   -moz-transition: opacity .3s, right .3s, width .5s;
-   -ms-transition: opacity .3s, right .3s, width .5s;
-   -o-transition: opacity .3s, right .3s, width .5s;
-   -webkit-transition: opacity .3s, right .3s, width .5s;
-   transition: opacity .3s, right .3s, width .5s;
+.sh-arrows,
+.sh-arrows label,
+.sh-btns label {
+    -webkit-transition: background .3s, opacity .3s, right .3s, width .5s;
+    transition: background .3s, opacity .3s, right .3s, width .5s
 }
-li.tab > div {
-   -moz-transition: opacity .7s ease .5s, top .7s ease .5s;
-   -ms-transition: opacity .7s ease .5s, top .7s ease .5s;
-   -o-transition: opacity .7s ease .5s, top .7s ease .5s;
-   -webkit-transition: opacity .7s ease .5s, top .7s ease .5s;
-   transition: opacity .7s ease .5s, top .7s ease .5s;
+li.tab>div {
+    -webkit-transition: opacity .7s ease .5s, transform .7s ease .5s;
+    transition: opacity .7s ease .5s, transform .7s ease .5s
 }
 /*
-=>Ahora si, lo que nos interesa
+=> slider contenedor
 */
-.sheet-slider ul {
-    position: relative;
-    height: 420px;
-}
-.sheet-slider ul > li.tab {
+.sheet-slider ul .tab {
+    display: block;
     position: absolute;
     top: 0;
-    display: inline-block;
-    vertical-align: top;
     width: 100%;
     height: 100%;
-    bottom: 0;
+    bottom: 0
 }
 
 /*estilo para textos*/
-.sheet-slider li.tab > div {
+.sheet-slider ul .tab>div {
     left: 0;
-    top: 1em;
+    top: 0;
+    -webkit-transform: translateY(3em);
+    transform: translateY(3em);
+    padding-left: 2.5em;
     position: absolute;
-    padding-left: 3em;
-    padding-top: 2.5em;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3), 0 1px 5px rgba(0, 0, 0, 0.16);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, .3), 0 1px 5px rgba(0, 0, 0, .16);
     max-width: 80%;
-    opacity: 0;
+    opacity: 0
 }
-.sheet-slider li.tab > div a {color: #009688;font-weight: 500;text-decoration: none;}
-.sheet-slider li.tab > div a:hover {color: #4DB6AC;text-decoration: none;}
-.sheet-slider li.tab > div h3 {font-size: 2em;margin: 0;font-weight: 700;}
-.sheet-slider li.tab > div span {font-size: 1.1em;font-weight: 500;}
-/*para los botones*/
+.sheet-slider ul .tab>div a {
+    color: #009688;
+    font-weight: 500;
+    text-decoration: none
+}
+.sheet-slider ul .tab>div a:hover {
+    color: #4db6ac;
+    text-decoration: none
+}
+.sheet-slider ul .tab>div h3 {
+    font-size: 2em;
+    margin: 0;
+    font-weight: 700
+}
+.sheet-slider ul .tab>div span {
+    font-size: 1.1em;
+    font-weight: 500
+}
+
+/*estilo para los botones*/
 .sheet-slider .sh-btns {
+    bottom: 0;
+    left: 0;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
     width: 100%;
-    z-index: 35;
+    z-index: 2;
     padding: 0 3em;
-    /*Soporte para flex*/
-    display: -webkit-flex;
-    display: -moz-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    /*direction*/
-    -webkit-flex-direction: row;
-    -moz-flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
     flex-direction: row;
-    /*justify*/
-    -webkit-justify-content: space-between;
-       -moz-justify-content: space-between;
-            justify-content: space-between;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between
 }
 .sheet-slider .sh-btns label {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: hsla(0, 0%, 100%, .8);
     cursor: pointer;
     margin: 0 2px;
     height: 7px;
-    -webkit-flex-basis: 0px;
-       -moz-flex-basis: 0px;
-            flex-basis: 0px;
-    -webkit-flex-grow: 1;
-       -moz-flex-grow: 1;
-            flex-grow: 1;
-
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0px;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1
 }
-.sheet-slider .sh-btns label:hover {background-color: rgba(255, 255, 255, 0.95);}
-/*y para las flechas*/
+.sheet-slider .sh-btns label:hover {
+    background-color: hsla(0, 0%, 100%, .95)
+}
 .sheet-slider .sh-arrows {
     position: absolute;
     right: -140px;
-    z-index: 40;
+    z-index: 3;
     width: auto;
     bottom: calc(3em + 7px);
-    opacity: 0;
+    opacity: 0
 }
-.sheet-slider:hover .sh-arrows {opacity: 1;right: 0}
+.sheet-slider:hover .sh-arrows {
+    opacity: 1;
+    right: 0
+}
 .sheet-slider .sh-arrows label {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: hsla(0, 0%, 100%, .8);
     background-repeat: no-repeat;
-    background-position: center center;
+    background-position: 50%;
     cursor: pointer;
     display: none;
     height: 60px;
     position: relative;
-    width: 70px;
+    width: 70px
 }
-.sheet-slider .sh-arrows label:hover {background-color: rgba(255, 255, 255, 0.95);width: 80px;}
+.sheet-slider .sh-arrows label:hover {
+    background-color: hsla(0, 0%, 100%, .95);
+    width: 80px
+}
+
 /*
 =>Para que el slider funcione debemos...
 */
 /*Especificar un maximo de 8 imagenes, se pueden agregar o quitar "slides" del css siguiendo la misma lógica*/
-.sheet-slider ul > li:nth-child(1) {left: 0;}
-.sheet-slider ul > li:nth-child(2) {left: 100%;}
-.sheet-slider ul > li:nth-child(3) {left: 200%;}
-.sheet-slider ul > li:nth-child(4) {left: 300%;}
-.sheet-slider ul > li:nth-child(5) {left: 400%;}
-.sheet-slider ul > li:nth-child(6) {left: 500%;}
-.sheet-slider ul > li:nth-child(7) {left: 600%;}
-.sheet-slider ul > li:nth-child(8) {left: 700%;}
+
+.sheet-slider ul>li:nth-child(1) {
+    left: 0
+}
+.sheet-slider ul>li:nth-child(2) {
+    left: 100%
+}
+.sheet-slider ul>li:nth-child(3) {
+    left: 200%
+}
+.sheet-slider ul>li:nth-child(4) {
+    left: 300%
+}
+.sheet-slider ul>li:nth-child(5) {
+    left: 400%
+}
+.sheet-slider ul>li:nth-child(6) {
+    left: 500%
+}
+.sheet-slider ul>li:nth-child(7) {
+    left: 600%
+}
+.sheet-slider ul>li:nth-child(8) {
+    left: 700%
+}
 
 /*segun el estado del input, el contenedor (ul) se desplaza un porcentaje*/
-#s1:checked ~ ul {left: 0;}
-#s2:checked ~ ul {left: -100%;}
-#s3:checked ~ ul {left: -200%;}
-#s4:checked ~ ul {left: -300%;}
-#s5:checked ~ ul {left: -400%;}
-#s6:checked ~ ul {left: -500%;}
-#s7:checked ~ ul {left: -600%;}
-#s8:checked ~ ul {left: -700%;}
+#s1:checked~ul {
+    left: 0
+}
+#s2:checked~ul {
+    left: -100%
+}
+#s3:checked~ul {
+    left: -200%
+}
+#s4:checked~ul {
+    left: -300%
+}
+#s5:checked~ul {
+    left: -400%
+}
+#s6:checked~ul {
+    left: -500%
+}
+#s7:checked~ul {
+    left: -600%
+}
+#s8:checked~ul {
+    left: -700%
+}
 
 /*basado en lo anterior, el texto aparece o no*/
-#s1:checked ~ ul > li:nth-child(1) > div,
-#s2:checked ~ ul > li:nth-child(2) > div,
-#s3:checked ~ ul > li:nth-child(3) > div,
-#s4:checked ~ ul > li:nth-child(4) > div,
-#s5:checked ~ ul > li:nth-child(5) > div,
-#s6:checked ~ ul > li:nth-child(6) > div,
-#s7:checked ~ ul > li:nth-child(7) > div,
-#s8:checked ~ ul > li:nth-child(8) > div {opacity: 1;top: 0;}
+#s1:checked~ul>li:nth-child(1)>div,
+#s2:checked~ul>li:nth-child(2)>div,
+#s3:checked~ul>li:nth-child(3)>div,
+#s4:checked~ul>li:nth-child(4)>div,
+#s5:checked~ul>li:nth-child(5)>div,
+#s6:checked~ul>li:nth-child(6)>div,
+#s7:checked~ul>li:nth-child(7)>div,
+#s8:checked~ul>li:nth-child(8)>div {
+    opacity: 1;
+    -webkit-transform: translateY(2em);
+    transform: translateY(2em)
+}
 
 /*los botones se pintan*/
-#s1:checked ~ .sh-btns label:nth-child(1),
-#s2:checked ~ .sh-btns label:nth-child(2),
-#s3:checked ~ .sh-btns label:nth-child(3),
-#s4:checked ~ .sh-btns label:nth-child(4),
-#s5:checked ~ .sh-btns label:nth-child(5),
-#s6:checked ~ .sh-btns label:nth-child(6),
-#s7:checked ~ .sh-btns label:nth-child(7),
-#s8:checked ~ .sh-btns label:nth-child(8) {background-color: #009688;}
+#s1:checked~.sh-btns label:nth-child(1),
+#s2:checked~.sh-btns label:nth-child(2),
+#s3:checked~.sh-btns label:nth-child(3),
+#s4:checked~.sh-btns label:nth-child(4),
+#s5:checked~.sh-btns label:nth-child(5),
+#s6:checked~.sh-btns label:nth-child(6),
+#s7:checked~.sh-btns label:nth-child(7),
+#s8:checked~.sh-btns label:nth-child(8) {
+    background-color: #009688
+}
 
 /*y las flechas aparecen*/
 /*Flecha derecha*/
-#s1:checked ~ .sh-arrows label:nth-child(2),
-#s2:checked ~ .sh-arrows label:nth-child(3),
-#s3:checked ~ .sh-arrows label:nth-child(4),
-#s4:checked ~ .sh-arrows label:nth-child(5),
-#s5:checked ~ .sh-arrows label:nth-child(6),
-#s6:checked ~ .sh-arrows label:nth-child(7),
-#s7:checked ~ .sh-arrows label:nth-child(8),
-#s2:checked:last-of-type ~ .sh-arrows label:nth-child(1),
-#s3:checked:last-of-type ~ .sh-arrows label:nth-child(1),
-#s4:checked:last-of-type ~ .sh-arrows label:nth-child(1),
-#s5:checked:last-of-type ~ .sh-arrows label:nth-child(1),
-#s6:checked:last-of-type ~ .sh-arrows label:nth-child(1),
-#s7:checked:last-of-type ~ .sh-arrows label:nth-child(1),
-#s8:checked:last-of-type ~ .sh-arrows label:nth-child(1) {
-   background-image: url(img/arrow/right1x.png);
-   display: block;
-   float: right;
-}
-/*Flecha izquierda*/
-#s1:checked ~ #s2:last-of-type ~ .sh-arrows label:nth-child(2),
-#s1:checked ~ #s3:last-of-type ~ .sh-arrows label:nth-child(3),
-#s1:checked ~ #s4:last-of-type ~ .sh-arrows label:nth-child(4),
-#s1:checked ~ #s5:last-of-type ~ .sh-arrows label:nth-child(5),
-#s1:checked ~ #s6:last-of-type ~ .sh-arrows label:nth-child(6),
-#s1:checked ~ #s7:last-of-type ~ .sh-arrows label:nth-child(7),
-#s1:checked ~ #s8:last-of-type ~ .sh-arrows label:nth-child(8),
-#s2:checked ~ .sh-arrows label:nth-child(1),
-#s3:checked ~ .sh-arrows label:nth-child(2),
-#s4:checked ~ .sh-arrows label:nth-child(3),
-#s5:checked ~ .sh-arrows label:nth-child(4),
-#s6:checked ~ .sh-arrows label:nth-child(5),
-#s7:checked ~ .sh-arrows label:nth-child(6),
-#s8:checked ~ .sh-arrows label:nth-child(7) {
-   background-image: url(img/arrow/left1x.png);
-   display: block;
-   float: left;
+#s1:checked~.sh-arrows label:nth-child(2),
+#s2:checked:last-of-type~.sh-arrows label:nth-child(1),
+#s2:checked~.sh-arrows label:nth-child(3),
+#s3:checked:last-of-type~.sh-arrows label:nth-child(1),
+#s3:checked~.sh-arrows label:nth-child(4),
+#s4:checked:last-of-type~.sh-arrows label:nth-child(1),
+#s4:checked~.sh-arrows label:nth-child(5),
+#s5:checked:last-of-type~.sh-arrows label:nth-child(1),
+#s5:checked~.sh-arrows label:nth-child(6),
+#s6:checked:last-of-type~.sh-arrows label:nth-child(1),
+#s6:checked~.sh-arrows label:nth-child(7),
+#s7:checked:last-of-type~.sh-arrows label:nth-child(1),
+#s7:checked~.sh-arrows label:nth-child(8),
+#s8:checked:last-of-type~.sh-arrows label:nth-child(1) {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAQAAAD9CzEMAAAAaklEQVR4Ae3NMRGDUBQF0S2TCEgsfTcMarBByYANwAEefvfongIuA+GugD0cl3POvXlp9yODjvgwEYSO6AhCSfxY9cRi4iLE9wxi/gtiS6JHUJv7SnnI3nvvG+0eClW3TyL3MqJw25xzbgftHXfvifaMzwAAAABJRU5ErkJggg==);
+    display: block;
+    float: right
 }
 
+/*Flecha izquierda*/
+#s1:checked~#s2:last-of-type~.sh-arrows label:nth-child(2),
+#s1:checked~#s3:last-of-type~.sh-arrows label:nth-child(3),
+#s1:checked~#s4:last-of-type~.sh-arrows label:nth-child(4),
+#s1:checked~#s5:last-of-type~.sh-arrows label:nth-child(5),
+#s1:checked~#s6:last-of-type~.sh-arrows label:nth-child(6),
+#s1:checked~#s7:last-of-type~.sh-arrows label:nth-child(7),
+#s1:checked~#s8:last-of-type~.sh-arrows label:nth-child(8),
+#s2:checked~.sh-arrows label:nth-child(1),
+#s3:checked~.sh-arrows label:nth-child(2),
+#s4:checked~.sh-arrows label:nth-child(3),
+#s5:checked~.sh-arrows label:nth-child(4),
+#s6:checked~.sh-arrows label:nth-child(5),
+#s7:checked~.sh-arrows label:nth-child(6),
+#s8:checked~.sh-arrows label:nth-child(7) {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAQAAAD9CzEMAAAAZ0lEQVR4Ae2TPQ5AYBQEJySOwXdgDuGncAwnEU7CK0QhUW7xkp3tZ6rFGGN0lJhUf8SKUn/FIqHUx+i1+oVKqZ9T6yfr//VjOj1sr/6kUT93pXbigxNODKBM7LSgSzx6XaIjDcYYcwMUqndiIawdDgAAAABJRU5ErkJggg==);
+    display: block;
+    float: left
+}
 @media only screen and (max-width: 840px) {
-.sheet-slider {font-size: 14px;}
-.sheet-slider ul {height: 350px;}
+    .sheet-slider {
+        font-size: 14px
+    }
+    .sheet-slider ul {
+        height: 350px
+    }
 }
 @media only screen and (max-width: 730px) {
-.sheet-slider {font-size: 13px;}
-.sheet-slider ul {height: 280px;}
-.sheet-slider .sh-arrows {right: 0;opacity: 1;bottom: 0;}
-.sheet-slider .sh-btns {display: none;}
-.sheet-slider li.tab > div {padding-left: 2em;padding-top: 1.5em;}
+    .sheet-slider {
+        font-size: 13px
+    }
+    .sheet-slider ul {
+        height: 280px
+    }
+    .sheet-slider .sh-arrows {
+        right: 0;
+        opacity: 1;
+        bottom: 0
+    }
+    .sheet-slider .sh-btns {
+        display: none
+    }
 }
 @media only screen and (max-width: 620px) {
-.sheet-slider li.tab > div {display: none;}
-.sheet-slider ul {height: 240px;}
+    .sheet-slider li.tab>div {
+        display: none
+    }
+    .sheet-slider ul {
+        height: 240px
+    }
 }
 @media only screen and (max-width: 510px) {
-.sheet-slider img {height: 100%;min-width: 100%;width: auto;}
+    .sheet-slider img {
+        height: 100%;
+        min-width: 100%;
+        width: auto
+    }
 }
