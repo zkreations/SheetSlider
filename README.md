@@ -13,6 +13,12 @@ Aloja el archivo `sheetslider.min.css` e incluir arriba de `</head>` el codigo c
 <link rel="stylesheet" href="dist/sheetslider.min.css"/>
 ```
 
+Si no peudes alojar, prueba cargando los estilosd es la cdn de rawgit:
+
+```html
+<link rel="stylesheet" href="https://cdn.rawgit.com/zkreations/SheetSlider/master/dist/sheetslider.min.css"/>
+```
+
 ## Modo de uso
 
 Solo hay que seguir el ejemplo del archivo **index.html**. Esta sería la forma mas simple de iniciar el slider sin textos ni botonera:
@@ -48,6 +54,12 @@ Aloja el archivo `sheetslider.min.js` e incluyelo en tu proyecto arriba de `</bo
 
 ```html
 <script src="dist/sheetslider.min.js"></script>
+```
+
+O desde la cdn de rawgit:
+
+```html
+<script src="https://cdn.rawgit.com/zkreations/SheetSlider/master/dist/sheetslider.min.js"></script>
 ```
 
 Para iniciar la animacion en el slider, incluye la clase `sh--auto` de esta forma:
