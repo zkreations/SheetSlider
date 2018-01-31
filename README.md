@@ -13,7 +13,7 @@ Aloja el archivo `sheetslider.min.css` e incluir arriba de `</head>` el codigo c
 <link rel="stylesheet" href="dist/sheetslider.min.css"/>
 ```
 
-Si no peudes alojar, prueba cargando los estilosd es la cdn de rawgit:
+Si no puedes alojar, prueba cargando los estilos desde la cdn de rawgit:
 
 ```html
 <link rel="stylesheet" href="https://cdn.rawgit.com/zkreations/SheetSlider/master/dist/sheetslider.min.css"/>
@@ -56,7 +56,7 @@ Aloja el archivo `sheetslider.min.js` e incluyelo en tu proyecto arriba de `</bo
 <script src="dist/sheetslider.min.js"></script>
 ```
 
-O desde la cdn de rawgit:
+O desde una cdn con rawgit:
 
 ```html
 <script src="https://cdn.rawgit.com/zkreations/SheetSlider/master/dist/sheetslider.min.js"></script>
