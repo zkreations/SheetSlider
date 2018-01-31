@@ -1,59 +1,66 @@
 # Sheet Slider
 
-[Demostración](http://zkreations.github.io/SheetSlider/)
+> Best slider for images with pure CSS [Demostración](http://zkreations.github.io/SheetSlider/)
 
-## Version 
-
-### Sheet Slider 1.03
-
-* Reset en el css para evitar la sobreescritura
-
-### Sheet Slider 1.02
-
-* Corrección de flex en botonera.
-* Mejora de compatibilidad con flex.
+[![license][license-img]][license-url]
+[![changelog][changelog-img]][changelog-url]
 
 ## Instalación
 
-[Descargar](https://github.com/zkreations/SheetSlider/archive/master.zip) e incluir arriba de `</head>` el codigo css.
+Aloja el archivo `sheetslider.min.css` e incluir arriba de `</head>` el codigo css.
 
 ```html
-<link rel="stylesheet" href="sheet-slider.min.css"/>
+<link rel="stylesheet" href="dist/sheetslider.min.css"/>
 ```
 
-### Utilizar Sheet Slider
+## Modo de uso
 
-Básicamente solo hay que seguir el ejemplo del archivo index.html. Esta sería la forma mas simple de hacerlo sin textos ni botonera:
+Solo hay que seguir el ejemplo del archivo **index.html**. Esta sería la forma mas simple de iniciar el slider sin textos ni botonera:
 
 ```html
-<div class="sheet-slider">
-   <input id="s1" type="radio" name="slide1" checked/>
+<div class="sheetSlider sh--default">
+   <input id="s1" type="radio" name="slide1" checked/> 
    <input id="s2" type="radio" name="slide1"/>
-   <input id="s3" type="radio" name="slide1"/>
-   <ul>
-      <li class="tab"><img src="img/slide-img01.jpg" /></li>
-      <li class="tab"><img src="img/slide-img02.jpg"/></li>
-      <li class="tab"><img src="img/slide-img03.jpg"/></li>
-   </ul>
-   <!--flechas-->
-   <div class="sh-arrows">
+   <div class="sh__content">
+      <div class="sh__item"><img src="img/img01.jpg"/></div>
+      <div class="sh__item"><img src="img/img02.jpg"/></div>
+   </div>
+   <div class="sh__arrows">
       <label for="s1"></label>
       <label for="s2"></label>
-      <label for="s3"></label>
    </div>
 </div>
 ```
-Para incluir la botonera; duplicar `<div class="sh-arrows">...</div>` y cambiar **sh-arrow** por **sh-btns**
+Para incluir la botonera; duplicar `<div class="sh__arrows">...</div>` y cambiar **sh__arrows** por **sh__btns**
 
-## Color y tema
+## Animaciones
 
-Despues de incluir `sheet-slider.min.css` agregar el siguiente codigo.
+La clase `sh--default` es obligatoria y establece la animación por defecto. Cambia `default` por `vertical` o `fade` para cambiar el efecto de transición:
+
 ```html
-<link rel="stylesheet" href="dist/theme/darken.css"/>
-<link rel="stylesheet" href="dist/color/cyan.css"/>
+<div class="sheetSlider sh--vertical">
+<div class="sheetSlider sh--fade">
 ```
 
-## Limitaciones
+## Auto slide
 
-* Solo puede haber un slider por página, ya que se basa en la **id** del **input** y esta no puede repetirse.
-* El slider solo puede contener hasta un máximo de 8 imágenes.
+Aloja el archivo `sheetslider.min.js` e incluyelo en tu proyecto arriba de `</body>` de la siguiente forma:
+
+```html
+<script src="dist/sheetslider.min.js"></script>
+```
+
+Para iniciar la animacion en el slider, incluye la clase `sh--auto` de esta forma:
+
+```html
+<div class="sheetSlider sh--default sh--auto">
+```
+
+## Licencia
+
+**Sheet Slider** is licensed under the MIT License.
+
+[changelog-img]: https://img.shields.io/badge/changelog-md-blue.svg?style=flat-square
+[changelog-url]: changelog.md
+[license-img]: https://img.shields.io/npm/l/normalize.css.svg?style=flat-square
+[license-url]: LICENSE
