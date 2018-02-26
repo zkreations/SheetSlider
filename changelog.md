@@ -1,5 +1,10 @@
 # changelog
 
+## v2.0.2
+
+- Solucionado "autoslide" cuando se utiliza la estructura simple. 
+- Cambios menores
+
 ## v2.0.0
 
 - Nueva estructura HTML basada en bloques y se eliminan las listas
