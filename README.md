@@ -46,7 +46,7 @@ Para incluir la botonera; duplicar `<div class="sh__arrows">...</div>` y cambiar
 | `sh-21r9`    | Apaisado |
 | `sh-16r9`    | Rectangular |
 | `sh-4r3`     | Desvanecimiento suave |
-| `sh-1:1`     | Cuadrado perfecto |
+| `sh-1r1`     | Cuadrado perfecto |
 
 La clase se establece en la etiqueta principal del slider. Si no se especifica se utiliza "**apaisado**" por defecto. Ejemplo:
 
