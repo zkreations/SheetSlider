@@ -52,6 +52,7 @@ La clase se establece en la etiqueta principal del slider. Si no se especifica s
 
 ```html
 <div class="sheetSlider sh-21r9">
+```
 
 ## Animaciones
 
