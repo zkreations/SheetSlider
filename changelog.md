@@ -1,9 +1,17 @@
 # changelog
 
+## v2.1.0
+
+- Codigo modularizado (module pattern).
+- Boton (pausar/reproducir) en modo automatico.
+- Cambios de sintaxis
+- Mejoras de diseño responsive (intrinsic ratio)(+ux)
+- Opciones de relacion de aspecto.
+
 ## v2.0.2
 
 - Solucionado "autoslide" cuando se utiliza la estructura simple. 
-- Cambios menores
+- Arreglos menores
 
 ## v2.0.0
 

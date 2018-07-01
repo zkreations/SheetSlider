@@ -1,10 +1,7 @@
 /*!
-=> Sheet Slider v2.0.2
+=> Sheet Slider v2.1.0
 => Copyright: 2018 zkreations
-=> URI: https://www.zkreations.com
-=> Author: Daniel Abel {Zero}
-=> Author URI: https://fb.com/daniei.abel
-=> Licensed under MIT | github.com/zkreations/whale.css/blob/master/LICENSE
+=> Licensed under MIT | github.com/zkreations/SheetSlider/blob/master/LICENSE
 */
 
 /* Estilos iniciales
@@ -15,6 +12,7 @@
     line-height: 1.5;
     position: relative;
     width: 100%;
+    padding-bottom: 42.857143%;
     overflow: hidden;
     -webkit-font-smoothing: antialiased;
 }
@@ -25,7 +23,8 @@
 .sheetSlider label,
 .sheetSlider a,
 .sheetSlider img,
-.sheetSlider span {
+.sheetSlider span,
+.sh-control {
     background: none;
     padding: 0;
     margin: 0;
@@ -37,8 +36,9 @@
 /* Contenedor
 ------------------------------------*/
 .sh__content {
-    position: relative;
-    height: 240px;
+    position: absolute;
+    height: 100%;
+    width: 100%;
     transition: transform .7s cubic-bezier(.54,0,.1,1);
     transform: translate3d(0, 0, 0);
 }
@@ -89,7 +89,7 @@
 .sh__btns {
     bottom: 0;left: 0;right: 0;
     position: absolute;
-    z-index: 2;
+    z-index: 10;
     padding-left: 4em;
     padding-right: 4em;
     justify-content: space-between;
@@ -108,93 +108,130 @@
 
 /* Estilo para Flechas
 ------------------------------------*/
-.sh__arrows {
+.sh__arrows,
+.sh-control{
     position: absolute;
     right: 0;
-    z-index: 3;
-    bottom: calc(4em + 6px);
-    transform: translate3d(100%, 0, 0);
+    bottom: 0;
+    z-index: 10;
+    transform: translate3d(0, 0, 0);
     transition: transform .3s;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .15);
 }
-.sheetSlider:hover .sh__arrows {
+.sh__arrows:hover,
+.sheetSlider:hover .sh__arrows,
+.sheetSlider:hover .sh-control {
     transform: translate3d(0, 0, 0);
 }
-.sh__arrows label {
-    background-color: rgba(255, 255, 255, .8);
+.sh__arrows label, .sh-control {
+    background-color: white;
     background-repeat: no-repeat;
     background-position: 50%;
     cursor: pointer;
+}
+.sh__arrows label {
     display: none;
-    height: 60px;
-    width: 70px;
-    transition: width .5s;
+    transition: background-color .3s;
+    width: 50px;
+    height: 50px;
 }
 .sh__arrows label:hover {
-    background-color: rgba(255, 255, 255, .95);
-    width: 80px
+    background-color: rgba(255, 255, 255, .9);
+}
+
+/* Boton de control (play/pause)
+------------------------------------*/
+.sh-control {
+    background-image: url(../img/icons/pause.png);
+    width: 45px;
+    height: 45px;
+    bottom: 50px;
+    background-color: white;
+}
+.sh-control.is-active {
+    background-image: url(../img/icons/play.png);
+}
+
+/*Intrinsic Ratios
+------------------------------------*/
+/*21:9*/
+.sh-21r9 {
+    padding-bottom: 42.857143%;
+}
+/*16:9*/
+.sh-16r9 {
+    padding-bottom: 56.25%;
+}
+/*4:3*/
+.sh-4r3 {
+    padding-bottom: 75%;
+}
+/*1:1*/
+.sh-1r1 {
+    padding-bottom: 100%;
 }
 
 /* Si los input estan "checked"
 ------------------------------------*/
 /*Animacion Default*/
-.sh--default .sh__item:nth-child(2) {left: 100%}
-.sh--default .sh__item:nth-child(3) {left: 200%}
-.sh--default .sh__item:nth-child(4) {left: 300%}
-.sh--default .sh__item:nth-child(5) {left: 400%}
-.sh--default .sh__item:nth-child(6) {left: 500%}
-.sh--default .sh__item:nth-child(7) {left: 600%}
-.sh--default .sh__item:nth-child(8) {left: 700%}
-.sh--default .sh__item:nth-child(9) {left: 800%}
-.sh--default .sh__item:nth-child(10) {left: 900%}
+.sh-default .sh__item:nth-child(2) {left: 100%}
+.sh-default .sh__item:nth-child(3) {left: 200%}
+.sh-default .sh__item:nth-child(4) {left: 300%}
+.sh-default .sh__item:nth-child(5) {left: 400%}
+.sh-default .sh__item:nth-child(6) {left: 500%}
+.sh-default .sh__item:nth-child(7) {left: 600%}
+.sh-default .sh__item:nth-child(8) {left: 700%}
+.sh-default .sh__item:nth-child(9) {left: 800%}
+.sh-default .sh__item:nth-child(10) {left: 900%}
 
-.sh--default input:nth-child(1):checked~.sh__content {transform: translate3d(0%, 0, 0);}
-.sh--default input:nth-child(2):checked~.sh__content {transform: translate3d(-100%, 0, 0);}
-.sh--default input:nth-child(3):checked~.sh__content {transform: translate3d(-200%, 0, 0);}
-.sh--default input:nth-child(4):checked~.sh__content {transform: translate3d(-300%, 0, 0);}
-.sh--default input:nth-child(5):checked~.sh__content {transform: translate3d(-400%, 0, 0);}
-.sh--default input:nth-child(6):checked~.sh__content {transform: translate3d(-500%, 0, 0);}
-.sh--default input:nth-child(7):checked~.sh__content {transform: translate3d(-600%, 0, 0);}
-.sh--default input:nth-child(8):checked~.sh__content {transform: translate3d(-700%, 0, 0);}
-.sh--default input:nth-child(9):checked~.sh__content {transform: translate3d(-800%, 0, 0);}
-.sh--default input:nth-child(10):checked~.sh__content {transform: translate3d(-900%, 0, 0);}
+.sh-default input:nth-child(1):checked~.sh__content {transform: translate3d(0%, 0, 0);}
+.sh-default input:nth-child(2):checked~.sh__content {transform: translate3d(-100%, 0, 0);}
+.sh-default input:nth-child(3):checked~.sh__content {transform: translate3d(-200%, 0, 0);}
+.sh-default input:nth-child(4):checked~.sh__content {transform: translate3d(-300%, 0, 0);}
+.sh-default input:nth-child(5):checked~.sh__content {transform: translate3d(-400%, 0, 0);}
+.sh-default input:nth-child(6):checked~.sh__content {transform: translate3d(-500%, 0, 0);}
+.sh-default input:nth-child(7):checked~.sh__content {transform: translate3d(-600%, 0, 0);}
+.sh-default input:nth-child(8):checked~.sh__content {transform: translate3d(-700%, 0, 0);}
+.sh-default input:nth-child(9):checked~.sh__content {transform: translate3d(-800%, 0, 0);}
+.sh-default input:nth-child(10):checked~.sh__content {transform: translate3d(-900%, 0, 0);}
 
 /* Animacion vertical*/
-.sh--vertical .sh__item:nth-child(2) {top: 100%}
-.sh--vertical .sh__item:nth-child(3) {top: 200%}
-.sh--vertical .sh__item:nth-child(4) {top: 300%}
-.sh--vertical .sh__item:nth-child(5) {top: 400%}
-.sh--vertical .sh__item:nth-child(6) {top: 500%}
-.sh--vertical .sh__item:nth-child(7) {top: 600%}
-.sh--vertical .sh__item:nth-child(8) {top: 700%}
-.sh--vertical .sh__item:nth-child(9) {top: 800%}
-.sh--vertical .sh__item:nth-child(10) {top: 900%}
+.sh-vertical .sh__item:nth-child(2) {top: 100%}
+.sh-vertical .sh__item:nth-child(3) {top: 200%}
+.sh-vertical .sh__item:nth-child(4) {top: 300%}
+.sh-vertical .sh__item:nth-child(5) {top: 400%}
+.sh-vertical .sh__item:nth-child(6) {top: 500%}
+.sh-vertical .sh__item:nth-child(7) {top: 600%}
+.sh-vertical .sh__item:nth-child(8) {top: 700%}
+.sh-vertical .sh__item:nth-child(9) {top: 800%}
+.sh-vertical .sh__item:nth-child(10) {top: 900%}
 
-.sh--vertical input:nth-child(1):checked~.sh__content {transform: translate3d(0%, 0, 0);}
-.sh--vertical input:nth-child(2):checked~.sh__content {transform: translate3d(0, -100%, 0);}
-.sh--vertical input:nth-child(3):checked~.sh__content {transform: translate3d(0, -200%, 0);}
-.sh--vertical input:nth-child(4):checked~.sh__content {transform: translate3d(0, -300%, 0);}
-.sh--vertical input:nth-child(5):checked~.sh__content {transform: translate3d(0, -400%, 0);}
-.sh--vertical input:nth-child(6):checked~.sh__content {transform: translate3d(0, -500%, 0);}
-.sh--vertical input:nth-child(7):checked~.sh__content {transform: translate3d(0, -600%, 0);}
-.sh--vertical input:nth-child(8):checked~.sh__content {transform: translate3d(0, -700%, 0);}
-.sh--vertical input:nth-child(9):checked~.sh__content {transform: translate3d(0, -800%, 0);}
-.sh--vertical input:nth-child(10):checked~.sh__content {transform: translate3d(0, -900%, 0);}
+.sh-vertical input:nth-child(1):checked~.sh__content {transform: translate3d(0%, 0, 0);}
+.sh-vertical input:nth-child(2):checked~.sh__content {transform: translate3d(0, -100%, 0);}
+.sh-vertical input:nth-child(3):checked~.sh__content {transform: translate3d(0, -200%, 0);}
+.sh-vertical input:nth-child(4):checked~.sh__content {transform: translate3d(0, -300%, 0);}
+.sh-vertical input:nth-child(5):checked~.sh__content {transform: translate3d(0, -400%, 0);}
+.sh-vertical input:nth-child(6):checked~.sh__content {transform: translate3d(0, -500%, 0);}
+.sh-vertical input:nth-child(7):checked~.sh__content {transform: translate3d(0, -600%, 0);}
+.sh-vertical input:nth-child(8):checked~.sh__content {transform: translate3d(0, -700%, 0);}
+.sh-vertical input:nth-child(9):checked~.sh__content {transform: translate3d(0, -800%, 0);}
+.sh-vertical input:nth-child(10):checked~.sh__content {transform: translate3d(0, -900%, 0);}
 
 /* Animacion fade*/
-.sh--fade .sh__item {
+.sh-fade .sh__item {
     opacity: 0;
     transition: opacity .7s cubic-bezier(.54,0,.1,1);
 }
-.sh--fade input:nth-child(1):checked~.sh__content .sh__item:nth-child(1),
-.sh--fade input:nth-child(2):checked~.sh__content .sh__item:nth-child(2),
-.sh--fade input:nth-child(3):checked~.sh__content .sh__item:nth-child(3),
-.sh--fade input:nth-child(4):checked~.sh__content .sh__item:nth-child(4),
-.sh--fade input:nth-child(5):checked~.sh__content .sh__item:nth-child(5),
-.sh--fade input:nth-child(6):checked~.sh__content .sh__item:nth-child(6),
-.sh--fade input:nth-child(7):checked~.sh__content .sh__item:nth-child(7),
-.sh--fade input:nth-child(8):checked~.sh__content .sh__item:nth-child(8),
-.sh--fade input:nth-child(9):checked~.sh__content .sh__item:nth-child(9),
-.sh--fade input:nth-child(10):checked~.sh__content .sh__item:nth-child(10) {opacity: 1;z-index: 1;}
+.sh-fade input:nth-child(1):checked~.sh__content .sh__item:nth-child(1),
+.sh-fade input:nth-child(2):checked~.sh__content .sh__item:nth-child(2),
+.sh-fade input:nth-child(3):checked~.sh__content .sh__item:nth-child(3),
+.sh-fade input:nth-child(4):checked~.sh__content .sh__item:nth-child(4),
+.sh-fade input:nth-child(5):checked~.sh__content .sh__item:nth-child(5),
+.sh-fade input:nth-child(6):checked~.sh__content .sh__item:nth-child(6),
+.sh-fade input:nth-child(7):checked~.sh__content .sh__item:nth-child(7),
+.sh-fade input:nth-child(8):checked~.sh__content .sh__item:nth-child(8),
+.sh-fade input:nth-child(9):checked~.sh__content .sh__item:nth-child(9),
+.sh-fade input:nth-child(10):checked~.sh__content .sh__item:nth-child(10) {opacity: 1;z-index: 1;}
 
 /* Mostrar el texto
 ------------------------------------*/
@@ -214,7 +251,7 @@
 
 /* Mostrar flechas
 ------------------------------------*/
-/*Flecha derecha => */
+/*Flecha derecha */
 .sheetSlider input:nth-child(1):checked~.sh__arrows label:nth-child(2),
 .sheetSlider input:nth-child(2):checked:last-of-type~.sh__arrows label:nth-child(1),
 .sheetSlider input:nth-child(2):checked~.sh__arrows label:nth-child(3),
@@ -233,11 +270,11 @@
 .sheetSlider input:nth-child(9):checked:last-of-type~.sh__arrows label:nth-child(1),
 .sheetSlider input:nth-child(9):checked~.sh__arrows label:nth-child(10),
 .sheetSlider input:nth-child(10):checked:last-of-type~.sh__arrows label:nth-child(1) {
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAQAAAD9CzEMAAAAaklEQVR4Ae3NMRGDUBQF0S2TCEgsfTcMarBByYANwAEefvfongIuA+GugD0cl3POvXlp9yODjvgwEYSO6AhCSfxY9cRi4iLE9wxi/gtiS6JHUJv7SnnI3nvvG+0eClW3TyL3MqJw25xzbgftHXfvifaMzwAAAABJRU5ErkJggg==);
+    background-image: url(../img/icons/right.png);
     display: block;
     float: right;
 }
-/*Flecha izquierda <= */
+/*Flecha izquierda */
 .sheetSlider input:nth-child(1):checked~input:nth-child(2):last-of-type~.sh__arrows label:nth-child(2),
 .sheetSlider input:nth-child(1):checked~input:nth-child(3):last-of-type~.sh__arrows label:nth-child(3),
 .sheetSlider input:nth-child(1):checked~input:nth-child(4):last-of-type~.sh__arrows label:nth-child(4),
@@ -256,37 +293,48 @@
 .sheetSlider input:nth-child(8):checked~.sh__arrows label:nth-child(7),
 .sheetSlider input:nth-child(9):checked~.sh__arrows label:nth-child(8),
 .sheetSlider input:nth-child(10):checked~.sh__arrows label:nth-child(9) {
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAQAAAD9CzEMAAAAZ0lEQVR4Ae2TPQ5AYBQEJySOwXdgDuGncAwnEU7CK0QhUW7xkp3tZ6rFGGN0lJhUf8SKUn/FIqHUx+i1+oVKqZ9T6yfr//VjOj1sr/6kUT93pXbigxNODKBM7LSgSzx6XaIjDcYYcwMUqndiIawdDgAAAABJRU5ErkJggg==);
+    background-image: url(../img/icons/left.png);
     display: block;
     float: left;
 }
 
 /* MediaQuerys
 ------------------------------------*/
-/* Extra small devices */
-@media (max-width: 575px) {
-    .sheetSlider img {
-        height: 100%;
-        min-width: 100%;
-        width: auto;
-    }
-}
 /* Small devices */
 @media (min-width: 576px) {
-    .sh__content {height: 280px}
-    .sheetSlider {font-size: 9px;}
+    .sheetSlider {
+        font-size: 9px;
+    }
+    .sh__arrows,
+    .sh-control {
+        transform: translate3d(100%, 0, 0);
+    }
+    .sh__arrows {
+        bottom: calc(4em + 6px);
+    }
+    .sh__arrows label {
+        width: 60px;
+        height: 60px;
+    }
+    .sh-control {
+        bottom: calc(4em + 66px);
+    }
 }
 /* Medium devices */
 @media (min-width: 768px) {
-    .sh__content {height: 350px;}
-    .sh__btns {display: flex;}
-    .sh__meta {display: block;}
+    .sh__btns {
+        display: flex;
+    }
+    .sh__meta {
+        display: block;
+    }
 }
 
 /* Large devices */
 @media (min-width: 992px) {
-    .sh__content {height: 420px;}
-    .sheetSlider{font-size: 10px;}
+    .sheetSlider{
+        font-size: 10px;
+    }
 }
 
 /* Personalizacion
