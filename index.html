@@ -25,9 +25,9 @@
 
 
 <!--Sheet Slider-->
-<div class="sheetSlider sh--default">
-   <input id="s1" type="radio" name="slide1"/> 
-   <input id="s2" type="radio" name="slide1" checked/> 
+<div class="sheetSlider sh-default sh-auto">
+   <input id="s1" type="radio" name="slide1" checked/> 
+   <input id="s2" type="radio" name="slide1"/> 
    <input id="s3" type="radio" name="slide1"/> 
    <input id="s4" type="radio" name="slide1"/> 
    <input id="s5" type="radio" name="slide1"/> 
@@ -103,6 +103,8 @@
       <label for="s5"></label>
    </div><!-- .sh__arrows -->
    
+   <!--Control-->
+   <button class="sh-control"></button>  
 </div><!-- .sheetSlider -->
 
 
@@ -115,7 +117,7 @@
 <h2>Estructura</h2>
 <p>Algunos elementos de la estructura html son opcionales y no impedirán que el slider funcione. Esta sería la <strong>estructura básica</strong> sin botonera y sin textos:</p>
 
-<pre class="code">&lt;div class="sheetSlider sh--default"&gt;
+<pre class="code">&lt;div class="sheetSlider sh-default"&gt;
    &lt;input id="s1" type="radio" name="slide1" checked/&gt; 
    &lt;input id="s2" type="radio" name="slide1"/&gt;
    &lt;div class="sh__content"&gt;
@@ -129,15 +131,15 @@
 &lt;/div&gt;</pre>
 
 <h2>Animación</h2>
-<p>Las animaciones las controla la clase <code>sh--default</code>, es obligatoria y establece la animación por defecto. Cambia <code>default</code> por <code>vertical</code> o <code>fade</code> para cambiar el efecto de transición:</p>
+<p>Las animaciones las controla la clase <code>sh-default</code>, es obligatoria y establece la animación por defecto. Cambia <code>default</code> por <code>vertical</code> o <code>fade</code> para cambiar el efecto de transición:</p>
 
-<pre class="code">&lt;div class="sheetSlider sh--vertical"&gt;
-&lt;div class="sheetSlider sh--fade"&gt;</pre>
+<pre class="code">&lt;div class="sheetSlider sh-vertical"&gt;
+&lt;div class="sheetSlider sh-fade"&gt;</pre>
 
 <h2>Vertical</h2>
 
-<!--Sheet Slider sh--vertical-->
-<div class="sheetSlider sh--vertical">
+<!--Sheet Slider sh-vertical-->
+<div class="sheetSlider sh-vertical">
    <input id="a1" type="radio" name="slide2" checked/> 
    <input id="a2" type="radio" name="slide2"/> 
    <input id="a3" type="radio" name="slide2"/> 
@@ -185,8 +187,8 @@
 </div><!-- .sheetSlider -->
 
 <h2>fade</h2>
-<!--Sheet Slider sh--vertical-->
-<div class="sheetSlider sh--fade">
+<!--Sheet Slider sh-vertical-->
+<div class="sheetSlider sh-fade">
    <input id="b1" type="radio" name="slide3" checked/> 
    <input id="b2" type="radio" name="slide3"/> 
    <input id="b3" type="radio" name="slide3"/> 
@@ -221,7 +223,6 @@
             <span>Secondary text without link</span>
          </div>
       </div>
-      
    </div><!-- .sh__content -->
 
    <!--flechas-->
@@ -230,7 +231,6 @@
       <label for="b2"></label>
       <label for="b3"></label>
    </div><!-- .sh__arrows -->
-   
 </div><!-- .sheetSlider -->
 
 <h2>Auto slide</h2>
@@ -240,14 +240,13 @@
 
 <p>Ahora agrega la clase <strong>sh__auto</strong> al contenedor principal de la siguiente manera:</p>
 
-<pre class="code">&lt;div class="sheetSlider sh--default sh--auto"&gt;</pre>
+<pre class="code">&lt;div class="sheetSlider sh-default sh-auto"&gt;</pre>
 
 </div><!-- .main .box -->
 
 <footer>
     <p>Created by <a href="http://www.zkreations.com">zkreations</a> - Made with <strong class="love">♥</strong> <a href="https://github.com/zkreations/SheetSlider">by Github</a></p>
 </footer>
-
 <script src="dist/sheetslider.min.js"></script>
 </body>
 </html>
