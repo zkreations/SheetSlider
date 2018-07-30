@@ -7,16 +7,16 @@
 
 ## Instalación
 
-Aloja el archivo `sheetslider.min.css` e incluir arriba de `</head>` el codigo css.
+Aloja el archivo `sheetslider.min.css` e incluir arriba de `</head>`:
 
 ```html
-<link rel="stylesheet" href="dist/sheetslider.min.css"/>
+<link rel="stylesheet" href="sheetslider.min.css"/>
 ```
 
-Tambien puedes cargar los estilos desde la cdn de rawgit:
+Tambien puedes cargar los estilos desde la cdn:
 
 ```html
-<link rel="stylesheet" href="https://cdn.rawgit.com/zkreations/SheetSlider/master/dist/sheetslider.min.css"/>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/zkreations/SheetSlider@2.2.0/dist/sheetslider.min.css"/>
 ```
 
 ## Modo de uso
@@ -37,7 +37,8 @@ Solo hay que seguir el ejemplo del archivo **index.html**. Esta sería la forma 
    </div>
 </div>
 ```
-Para incluir la botonera; duplicar `<div class="sh__arrows">...</div>` y cambiar **sh__arrows** por **sh__btns**
+
+Para incluir la botonera, duplicar `<div class="sh__arrows">...</div>` y cambiar **sh__arrows** por **sh__btns**
 
 ## Relacion de aspecto
 
@@ -45,13 +46,13 @@ Para incluir la botonera; duplicar `<div class="sh__arrows">...</div>` y cambiar
 | ------------ | ----------------------------------- |
 | `sh-21r9`    | Apaisado |
 | `sh-16r9`    | Rectangular |
-| `sh-4r3`     | Desvanecimiento suave |
+| `sh-4r3`     | Estándar |
 | `sh-1r1`     | Cuadrado perfecto |
 
 La clase se establece en la etiqueta principal del slider. Si no se especifica se utiliza "**apaisado**" por defecto. Ejemplo:
 
 ```html
-<div class="sheetSlider sh-21r9">
+<div class="sheetSlider sh-16r9">
 ```
 
 ## Animaciones
@@ -61,6 +62,7 @@ La clase se establece en la etiqueta principal del slider. Si no se especifica s
 | `sh-default`       | Animacion por defecto (horizontal) |
 | `sh-vertical`      | Pase de imagenes en vertical |
 | `sh-fade`          | Desvanecimiento suave |
+| `sh-flip`          | Plegado vertical |
 
 
 La clase se establece en la etiqueta principal del slider y es obligatoria. Ejemplo:
@@ -77,10 +79,10 @@ Aloja el archivo `sheetslider.min.js` e incluyelo en tu proyecto arriba de `</bo
 <script src="dist/sheetslider.min.js"></script>
 ```
 
-O desde una cdn con rawgit:
+O desde una cdn:
 
 ```html
-<script src="https://cdn.rawgit.com/zkreations/SheetSlider/master/dist/sheetslider.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/zkreations/SheetSlider@2.2.0/dist/sheetslider.min.js"></script>
 ```
 
 Incluye la clase `sh-auto` para iniciar la animacion, Ejemplo:
