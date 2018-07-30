@@ -38,8 +38,8 @@
          <img src="img/slide-img01.jpg" alt="imgText"/>
          <!-- Item Info -->
          <div class="sh__meta">
-            <h4>2 Weeks</h4>
-            <span>Secondary text <a href="#urlPage">with link</a></span>
+            <h4>Artwork surreal</h4>
+            <span>Secondary text without link</span>
          </div>
       </div>
 
@@ -48,8 +48,8 @@
          <img src="img/slide-img02.jpg" alt="imgText"/>
          <!-- Item Info -->
          <div class="sh__meta">
-            <h4>Artwork surreal</h4>
-            <span>Secondary text without link</span>
+            <h4>2 Weeks</h4>
+            <span>Secondary text <a href="#urlPage">with link</a></span>
          </div>
       </div>
 
@@ -68,8 +68,8 @@
          <img src="img/slide-img04.jpg" alt="imgText"/>
          <!-- Item Info -->
          <div class="sh__meta">
-            <h4>Watercolor landscape</h4>
-            <span>Secondary text <a href="#urlPage">with link</a></span>
+            <h4>Sheet</h4>
+            <span>Secondary text without link</span>
          </div>
       </div>
 
@@ -85,7 +85,7 @@
       
    </div><!-- .sh__content -->
 
-   <!--botones-->
+   <!--botones -->
    <div class="sh__btns">
       <label for="s1"></label>
       <label for="s2"></label>
@@ -110,9 +110,13 @@
 
 
 <h2>Instalar</h2>
-<p>Para empezar aloja el archivo <strong>sheetslider.min.css</strong> e incluyelo arriba de <code>&lt;/head&gt;</code> de esta manera:</p>
+<p>Sube el archivo <strong>sheetslider.min.css</strong> e incluyelo arriba de <code>&lt;/head&gt;</code></p>
 
-<pre class="code">&lt;link rel="stylesheet" href="dist/sheetslider.min.css"/&gt;</pre>
+<pre class="code">&lt;link rel="stylesheet" href="sheetslider.min.css"/&gt;</pre>
+
+<p>O cargalo desde una <strong>cdn</strong> con jsdelivr:</p>
+
+<pre class="code">&lt;link href="//cdn.jsdelivr.net/gh/zkreations/SheetSlider@2.2.0/dist/sheetslider.min.css" rel="stylesheet"/&gt;</pre>
 
 <h2>Estructura</h2>
 <p>Algunos elementos de la estructura html son opcionales y no impedirán que el slider funcione. Esta sería la <strong>estructura básica</strong> sin botonera y sin textos:</p>
@@ -131,112 +135,20 @@
 &lt;/div&gt;</pre>
 
 <h2>Animación</h2>
-<p>Las animaciones las controla la clase <code>sh-default</code>, es obligatoria y establece la animación por defecto. Cambia <code>default</code> por <code>vertical</code> o <code>fade</code> para cambiar el efecto de transición:</p>
+<p>Las animaciones las controla la clase <code>sh-default</code>, es obligatoria y establece la animación por defecto. Cambia <code>default</code> por <code>vertical</code>, <code>fade</code> o <code>flip</code> para cambiar el efecto de transición:</p>
 
 <pre class="code">&lt;div class="sheetSlider sh-vertical"&gt;
-&lt;div class="sheetSlider sh-fade"&gt;</pre>
-
-<h2>Vertical</h2>
-
-<!--Sheet Slider sh-vertical-->
-<div class="sheetSlider sh-vertical">
-   <input id="a1" type="radio" name="slide2" checked/> 
-   <input id="a2" type="radio" name="slide2"/> 
-   <input id="a3" type="radio" name="slide2"/> 
-   <div class="sh__content">
-
-      <!-- Slider Item -->
-      <div class="sh__item">
-         <img src="img/slide-img06.jpg" alt="imgText"/>
-         <!-- Item Info -->
-         <div class="sh__meta">
-            <h4>Autumn tree</h4>
-            <span>Secondary text without link</span>
-         </div>
-      </div>
-
-      <!-- Slider Item -->
-      <div class="sh__item">
-         <img src="img/slide-img07.jpg" alt="imgText"/>
-         <!-- Item Info -->
-         <div class="sh__meta">
-            <h4>Landscape wood</h4>
-            <span>Secondary text without link</span>
-         </div>
-      </div>
-
-      <!-- Slider Item -->
-      <div class="sh__item">
-         <img src="img/slide-img08.jpg" alt="imgText"/>
-         <!-- Item Info -->
-         <div class="sh__meta">
-            <h4>Nature arts</h4>
-            <span>Secondary text without link</span>
-         </div>
-      </div>
-      
-   </div><!-- .sh__content -->
-
-   <!--flechas-->
-   <div class="sh__arrows">
-      <label for="a1"></label>
-      <label for="a2"></label>
-      <label for="a3"></label>
-   </div><!-- .sh__arrows -->
-   
-</div><!-- .sheetSlider -->
-
-<h2>fade</h2>
-<!--Sheet Slider sh-vertical-->
-<div class="sheetSlider sh-fade">
-   <input id="b1" type="radio" name="slide3" checked/> 
-   <input id="b2" type="radio" name="slide3"/> 
-   <input id="b3" type="radio" name="slide3"/> 
-   <div class="sh__content">
-
-      <!-- Slider Item -->
-      <div class="sh__item">
-         <img src="img/slide-img09.jpg" alt="imgText"/>
-         <!-- Item Info -->
-         <div class="sh__meta">
-            <h4>Sheet</h4>
-            <span>Secondary text without link</span>
-         </div>
-      </div>
-
-      <!-- Slider Item -->
-      <div class="sh__item">
-         <img src="img/slide-img10.jpg" alt="imgText"/>
-         <!-- Item Info -->
-         <div class="sh__meta">
-            <h4>Bridge</h4>
-            <span>Secondary text without link</span>
-         </div>
-      </div>
-
-      <!-- Slider Item -->
-      <div class="sh__item">
-         <img src="img/slide-img11.jpg" alt="imgText"/>
-         <!-- Item Info -->
-         <div class="sh__meta">
-            <h4>Woman</h4>
-            <span>Secondary text without link</span>
-         </div>
-      </div>
-   </div><!-- .sh__content -->
-
-   <!--flechas-->
-   <div class="sh__arrows">
-      <label for="b1"></label>
-      <label for="b2"></label>
-      <label for="b3"></label>
-   </div><!-- .sh__arrows -->
-</div><!-- .sheetSlider -->
+&lt;div class="sheetSlider sh-fade"&gt;
+&lt;div class="sheetSlider sh-flip"&gt;</pre>
 
 <h2>Auto slide</h2>
-<p>El slider carece de animación automatica mediante css puro, pero si se desea, aloja el archivo <strong>sheetslider.min.js</strong> e incluyelo en tu proyecto arriba de <code>&lt;/body&gt;</code> de la siguiente forma:</p>
+<p>El slider carece de animación automatica mediante css puro, pero si se desea, aloja el archivo <strong>sheetslider.min.js</strong> e incluyelo en tu proyecto arriba de <code>&lt;/body&gt;</code></p>
 
-<pre class="code">&lt;script src="dist/sheetslider.min.js"&gt;&lt;/script&gt;</pre>
+<pre class="code">&lt;script src="sheetslider.min.js"&gt;&lt;/script&gt;</pre>
+
+<p>O cargalo desde una <strong>cdn</strong> con jsdelivr:</p>
+
+<pre class="code">&lt;link href="//cdn.jsdelivr.net/gh/zkreations/SheetSlider@2.2.0/dist/sheetslider.min.js" rel="stylesheet"/&gt;</pre>
 
 <p>Ahora agrega la clase <strong>sh__auto</strong> al contenedor principal de la siguiente manera:</p>
 

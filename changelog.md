@@ -1,5 +1,12 @@
 # changelog
 
+## v2.2.0
+
+- Corregido error del modo automatico cuando no existen flechas
+- Opcion para activar o desactivar el "pause" al posicionar el mouse sobre el slider
+- Ahora el modo automatico inicia cuando los recursos hayan cargado
+- Nueva animacion `sh-flip` disponible
+
 ## v2.1.0
 
 - Codigo modularizado (module pattern).

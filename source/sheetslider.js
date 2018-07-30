@@ -1,28 +1,30 @@
 /*!
-=> Sheet Slider v2.1.0
+=> Sheet Slider v2.2.0
 => Copyright: 2018 zkreations
 => Licensed under MIT | github.com/zkreations/SheetSlider/blob/master/LICENSE
 */
 
 var sheetSlider = (function(){
 
-var sliderTime = 3, // Cantidad de segundos de la animacion
+var animateDelay = 4000,
+    autoplayHoverPause = false,
     auto, slides = document.querySelectorAll(".sh-auto input"),
     sliderContent = document.querySelector(".sh-auto .sh__content"), 
     sliderButtons = document.querySelectorAll(".sh-auto .sh__btns label"),
     sliderArrows = document.querySelectorAll(".sh-auto .sh__arrows label"),
     sliderControl = document.querySelector(".sh-control"), sliderStoped = false;
 
-// Pausar la animacion si el puntero esta sobre el contenido,
-// continuar cuando se retire
-sliderContent.addEventListener("mouseover", pauseSlider);
-sliderContent.addEventListener("mouseout", playSlider);
+// Pausar la animacion si el puntero esta sobre el contenido
+if (autoplayHoverPause) {    
+  sliderContent.addEventListener("mouseover", pauseSlider);
+  sliderContent.addEventListener("mouseout", playSlider);
+}
 
 if(sliderControl) sliderControl.addEventListener("click", playPauseButton);
 
-// Creamos el interval para marcar los input[radio]
+// Marcar los input[radio]
 function setInput(){
-  auto = setInterval(autoSlides, sliderTime * 1000);
+  auto = setInterval(autoSlides, animateDelay);
 }
 
 function autoSlides() {
@@ -61,13 +63,17 @@ for (var i = 0; i < slides.length; i++) {
           playSlider();
       });
   }
+  if (sliderArrows.length){
   // Pausar si las flechas reciben un clic
   sliderArrows[i].addEventListener("click", function() {
       pauseSlider();
       playSlider();
   });
+  }
 }
-
-setInput();
-
+    
+window.addEventListener("load",function(){
+  setInput();
+});
+                        
 })();

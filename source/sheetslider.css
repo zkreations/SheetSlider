@@ -1,5 +1,5 @@
 /*!
-=> Sheet Slider v2.1.0
+=> Sheet Slider v2.2.0
 => Copyright: 2018 zkreations
 => Licensed under MIT | github.com/zkreations/SheetSlider/blob/master/LICENSE
 */
@@ -52,6 +52,9 @@
     width: 100%;
     height: 100%;
 }
+.sh__item img {
+    width: 100%;
+}
 
 /* Estilos para textos
 ------------------------------------*/
@@ -63,7 +66,7 @@
     max-width: 80%;
     opacity: 0;
     transform: translate3d(0, 4em, 0);
-    transition: opacity .7s .3s,transform .7s .3s;
+    transition: opacity .7s .4s,transform .7s .4s;
 }
 .sh__meta h4 {
     font-size: 3.4em;
@@ -232,6 +235,28 @@
 .sh-fade input:nth-child(8):checked~.sh__content .sh__item:nth-child(8),
 .sh-fade input:nth-child(9):checked~.sh__content .sh__item:nth-child(9),
 .sh-fade input:nth-child(10):checked~.sh__content .sh__item:nth-child(10) {opacity: 1;z-index: 1;}
+
+/* Animacion flip*/
+.sh-flip .sh__item {
+    opacity: 0;
+    transition: transform .5s cubic-bezier(.54,0,.1,1), opacity .5s;
+    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    transform-origin: bottom;
+}
+.sh-flip input:nth-child(1):checked~.sh__content .sh__item:nth-child(1),
+.sh-flip input:nth-child(2):checked~.sh__content .sh__item:nth-child(2),
+.sh-flip input:nth-child(3):checked~.sh__content .sh__item:nth-child(3),
+.sh-flip input:nth-child(4):checked~.sh__content .sh__item:nth-child(4),
+.sh-flip input:nth-child(5):checked~.sh__content .sh__item:nth-child(5),
+.sh-flip input:nth-child(6):checked~.sh__content .sh__item:nth-child(6),
+.sh-flip input:nth-child(7):checked~.sh__content .sh__item:nth-child(7),
+.sh-flip input:nth-child(8):checked~.sh__content .sh__item:nth-child(8),
+.sh-flip input:nth-child(9):checked~.sh__content .sh__item:nth-child(9),
+.sh-flip input:nth-child(10):checked~.sh__content .sh__item:nth-child(10) {
+    transform: perspective(400px);
+    opacity: 1;
+    z-index: 1;
+}
 
 /* Mostrar el texto
 ------------------------------------*/
