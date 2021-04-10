@@ -1,0 +1,14 @@
+// Generador de medios
+//
+// Añade puntos de quiebre basados en los breakpoints del proyecto
+@mixin media($direction, $key) {
+  $breakpoint: map-get($breakpoints, $key);
+  $media: if($direction == "max", ($breakpoint - 1), $breakpoint);
+  @if not $breakpoint {
+    @warn 'El Breakpoint no esta definido';
+  } @else {
+    @media (#{$direction}-width: $media) {
+      @content;
+    }
+  }
+}

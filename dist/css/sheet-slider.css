@@ -1,0 +1,36 @@
+/*!
+ * sheetslider v3.0.0
+ * Copyright 2018-2021
+ * Developed by zkreations (https://zkreations.com/)
+ * Licensed under MIT (https://github.com/zkreations/sheetslider/blob/master/LICENSE)
+ */
+@font-face {
+  font-family: 'sheet';
+  src: url("../font/sheet.eot?4641300");
+  src: url("../font/sheet.eot?4641300#iefix") format("embedded-opentype"), url("../font/sheet.woff2?4641300") format("woff2"), url("../font/sheet.woff?4641300") format("woff"), url("../font/sheet.ttf?4641300") format("truetype"), url("../font/sheet.svg?4641300#sheet") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.sheet {
+  --ss-transition-delay: 0.3s;
+}
+
+.sheet-content::before {
+  font-family: "sheet";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  height: 1em;
+  line-height: 1;
+  text-align: center;
+  vertical-align: middle;
+}
+
+/*# sourceMappingURL=sheet-slider.css.map */
