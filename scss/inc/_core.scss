@@ -1,11 +1,7 @@
 @font-face {
   font-family: 'sheet';
-  src: url('../font/sheet.eot?4641300');
-  src: url('../font/sheet.eot?4641300#iefix') format('embedded-opentype'),
-       url('../font/sheet.woff2?4641300') format('woff2'),
-       url('../font/sheet.woff?4641300') format('woff'),
-       url('../font/sheet.ttf?4641300') format('truetype'),
-       url('../font/sheet.svg?4641300#sheet') format('svg');
+  src: url('../../assets/fonts/sheet.woff2') format('woff2'),
+       url('../../assets/fonts/sheet.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -18,23 +14,47 @@
 // Prev chevron:  "\e827"
 
 // Comentarios (lista)
-.sheet {
-  --ss-transition-delay: 0.3s;
+.#{$class-prefix} {
+  --#{$vars-prefix}color: #{$main-color};
+  --#{$vars-prefix}duration: #{$transition-duration};
+  --#{$vars-prefix}gap: #{$main-gap};
 
+
+  --#{$vars-prefix}meta-color: #{$meta-color};
+
+  --#{$vars-prefix}meta-title-size: #{$meta-title-size};
+  --#{$vars-prefix}meta-text-size: #{$meta-text-size};
+
+  --#{$vars-prefix}arrow-right: "\e828";
+  --#{$vars-prefix}arrow-left: "\e827";
+
+  font-size: $font-size-base;
+  overflow: hidden;
+  line-height: 1;
+  position: relative;
+
+  input {
+    display: none;
+  }
+  
   &-content {
-    // Iconos de fuentes
-    &::before {
+    display: flex;
+    transform: translate3d(calc((var(--#{$vars-prefix}pos,0) - 1) * -100%), 0, 0);
+    transition: transform var(--#{$vars-prefix}duration) var(--#{$vars-prefix}timing, #{$transition-timing});
+    will-change: transform;
+  }
+
+  // Iconos de fuentes
+  &-arrows {
+    label::before {
       font-family: "sheet";
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       font-style: normal;
       font-weight: normal;
-      font-variant: normal;
       text-transform: none;
       display: inline-block;
-      text-decoration: inherit;
-      width: 1em;
-      height: 1em;
+      text-decoration: none;
       line-height: 1;
       text-align: center;
       vertical-align: middle;

@@ -1,0 +1,29 @@
+.#{$class-prefix} {
+  &-buttons {
+    display: flex;
+    gap: .25em;
+    position: absolute;
+    bottom: 0;
+    left: var(--#{$vars-prefix}gap);
+    right: var(--#{$vars-prefix}gap);
+    label {
+      flex: 1 0 auto;
+      cursor: pointer;
+      background-color: rgba(255, 255, 255, 0.25);
+      transition: background-color calc(var(--#{$vars-prefix}duration) * .5);
+      will-change: background-color;
+      &::before {
+        content: "";
+        padding-bottom: 5px;
+        display: block;
+        background-color: var(--#{$vars-prefix}color);
+        opacity: var(--#{$vars-prefix}i,0);
+        transition: opacity calc(var(--#{$vars-prefix}duration) * .5);
+        will-change: opacity;
+      }
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.5);
+      }
+    }
+  }
+}

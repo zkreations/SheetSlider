@@ -49,7 +49,7 @@ const minify = () => {
 const watchcss = () => {
   watch(
     [ './scss/**/*.scss' ],
-    series( build )
+    series( build, minify )
   );
 };
 

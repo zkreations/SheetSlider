@@ -1,5 +1,31 @@
 // VARIABLES
 //
+// Prefijos
+$class-prefix:            "sheet" !default;
+$vars-prefix:             "ss-" !default;
+$slider-items:            8 !default;
+
+// ESTILOS
+//
+// General
+$main-color:              #059669 !default;
+$main-gap:                3em !default;
+$font-size-base:          14px !default;
+$transition-duration:     1s !default;
+$transition-timing:       cubic-bezier(.5,0,.1,1) !default;
+
+// Items
+$items-transition:      1s;
+
+// Meta
+$meta-color:            #fff !default;
+$meta-space:            3em !default;
+$meta-font-weight:      500 !default;
+$meta-title-size:       2.5em !default;
+$meta-text-size:        1.2em !default;
+$meta-transition:       .75s .5s !default;
+$meta-text-shadow:      0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 5px rgba(0, 0, 0, 0.2) !default;
+
 // Breakpoints
 $breakpoints: (
   xs: 0,

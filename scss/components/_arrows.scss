@@ -1,0 +1,54 @@
+
+.#{$class-prefix} {
+  &-arrows {
+    display: flex;
+    bottom: var(--#{$vars-prefix}gap);
+    right: var(--#{$vars-prefix}gap);
+    position: absolute;
+    label {
+      &::before {
+        content: var(--#{$vars-prefix}r, var(--#{$vars-prefix}l));
+      }
+    }
+  }
+  // Muestra la flecha correcta
+  @for $i from 1 through ($slider-items) {
+    input:nth-child(#{$i}):checked {
+      ~ .#{$class-prefix}-arrows {
+
+        // Izquierda
+        @if ($i != 1) {
+          > :nth-child(#{$i - 1}) {
+            --#{$vars-prefix}l: var(--#{$vars-prefix}arrow-left);
+          }
+        }
+
+        // Derecha
+        @if ($i != $slider-items) {
+          > :nth-child(#{$i + 1}) {
+            --#{$vars-prefix}r: var(--#{$vars-prefix}arrow-right);
+          }
+        }
+
+      }
+    }
+  }
+
+  // Para el final y el principio
+  input:checked {
+    // Derecha
+    &:last-of-type:not(:nth-child(2)) {
+      ~ .#{$class-prefix}-arrows label:first-child:not(:only-child) {
+        --#{$vars-prefix}r: var(--#{$vars-prefix}arrow-right);
+        order: $slider-items;
+      }
+    }
+    // Izquierda
+    &:first-of-type {
+      ~ .#{$class-prefix}-arrows label:last-child:not(:only-child) {
+        --#{$vars-prefix}l: var(--#{$vars-prefix}arrow-left);
+        order: -1;
+      }
+    }
+  }
+}
