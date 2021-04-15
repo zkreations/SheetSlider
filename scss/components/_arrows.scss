@@ -5,6 +5,9 @@
     bottom: calc(var(--#{$vars-prefix}gap) + var(--#{$vars-prefix}navigation-size));
     right: 0;
     position: absolute;
+    box-shadow: var(--#{$vars-prefix}main-shadow, $main-shadow);
+    transform: translateX(calc(100% + var(--#{$vars-prefix}gap)));
+    transition: transform calc(var(--#{$vars-prefix}duration) * .5);
     label {
       &::before {
         content: var(--#{$vars-prefix}r, var(--#{$vars-prefix}l));
@@ -22,6 +25,10 @@
         }
       }
     }
+  }
+  // Muestra las flechas
+  &:hover  &-arrows {
+    transform: translateX(0);
   }
   // Muestra la flecha correcta
   @for $i from 1 through ($slider-items) {

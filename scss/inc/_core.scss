@@ -6,21 +6,26 @@
   font-style: normal;
 }
 
-// Play:  "\e82b"
-// Pause: "\e829"
-// Next:  "\e826"
-// Prev:  "\e82a"
-// Next chevron:  "\e828"
-// Prev chevron:  "\e827"
+// Play:  "\e808"
+// Pause: "\e809"
+// Next:  "\e804"
+// Prev:  "\e805"
+// Up:  "\e802"
+// Down:  "\e800"
+// Next chevron:  "\e807"
+// Prev chevron:  "\e806"
+// Up chevron:  "\e801"
+// Down chevron:  "\e803"
 
 // Comentarios (lista)
 .#{$class-prefix} {
   --#{$vars-prefix}color: #{$main-color};
   --#{$vars-prefix}duration: #{$transition-duration};
   --#{$vars-prefix}gap: #{$main-gap};
-  --#{$vars-prefix}arrow-right: "\e828";
-  --#{$vars-prefix}arrow-left: "\e827";
+  --#{$vars-prefix}arrow-right: "\e807";
+  --#{$vars-prefix}arrow-left: "\e806";
   --#{$vars-prefix}navigation-size: #{$navigation-size};
+  --#{$vars-prefix}ratio: calc((var(--#{$vars-prefix}ratio-y, 9) / var(--#{$vars-prefix}ratio-x, 21)) * 100%);
   font-size: $font-size-base;
   overflow: hidden;
   position: relative;

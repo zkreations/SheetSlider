@@ -1,30 +1,28 @@
-.#{$class-prefix} {
-  &-item {
+.#{$class-prefix}:not(.#{$class-prefix}-fade) {
+  .#{$class-prefix}-item {
     flex-shrink: 0;
     flex-basis: 100%;
     position: relative;
+  }
+}
+
+.#{$class-prefix} {
+  &-item {
     &::after {
-      display: block;
-      content: "";
-      padding-top: calc((var(--#{$vars-prefix}ratio-y, 9) / var(--#{$vars-prefix}ratio-x, 21)) * 100%);
+      @include aspect-ratio;
     }
     img {
-      width: 100%;
       display: block;
       object-fit: cover;
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
+      @include inset;
     }
   }
 
   &-meta {
-    font-weight: $meta-font-weight;
-    text-shadow: $meta-text-shadow;
+    font-weight: $font-weight;
+    text-shadow: var(--#{$vars-prefix}text-shadow, $text-shadow);
     position: absolute;
-    color: var(--#{$vars-prefix}meta-color, #{$meta-color});
+    color: var(--#{$vars-prefix}text-color, #{$text-color});
     top: var(--#{$vars-prefix}gap);
     left: var(--#{$vars-prefix}gap);
     opacity: var(--#{$vars-prefix}i,0);
@@ -38,10 +36,10 @@
       margin-top: 0;
       margin-bottom: 0;
       &:first-child {
-        font-size: var(--#{$vars-prefix}meta-title-size, #{$meta-title-size});
+        font-size: var(--#{$vars-prefix}title-size, #{$title-size});
       }
       + * {
-        font-size: var(--#{$vars-prefix}meta-text-size, #{$meta-text-size});
+        font-size: var(--#{$vars-prefix}text-size, #{$text-size});
       }
     }
   }

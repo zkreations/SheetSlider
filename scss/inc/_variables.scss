@@ -3,37 +3,36 @@
 // Prefijos
 $class-prefix:            "sheet" !default;
 $vars-prefix:             "ss-" !default;
-$slider-items:            8 !default;
+$slider-items:            10 !default;
 
 // ESTILOS
 //
 // General
+$main-transition:         1s !default;
 $main-color:              #059669 !default;
-$main-transition:         1s;
+$main-shadow:             0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 5px rgba(0, 0, 0, 0.2) !default;
 $main-gap:                3em !default;
 $font-size-base:          14px !default;
+$font-weight:             500 !default;
 $transition-duration:     1s !default;
 $transition-timing:       cubic-bezier(.5,0,.1,1) !default;
 
 // Meta
-$meta-color:              #fff !default;
-$meta-space:              3em !default;
-$meta-font-weight:        500 !default;
-$meta-title-size:         2.5em !default;
-$meta-text-size:          1.2em !default;
-$meta-transition:         .75s .5s !default;
-$meta-text-shadow:        0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 5px rgba(0, 0, 0, 0.2) !default;
+$text-color:              #fff !default;
+$title-size:              2.5em !default;
+$text-size:               1.2em !default;
+$text-shadow:             0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 5px rgba(0, 0, 0, 0.2) !default;
 
 // Navegacion
-$navigation-bg:           rgba(255, 255, 255, 0.5);
-$navigation-bg-hover:     rgba(255, 255, 255, 0.75);
-$navigation-size:         5px;
+$navigation-bg:           rgba(255, 255, 255, 0.5) !default;
+$navigation-bg-hover:     rgba(255, 255, 255, 0.75) !default;
+$navigation-size:         5px !default;
 
 // Flechas
-$arrow-bg:                #fff;
-$arrow-bg-hover:          rgba(255, 255, 255, 0.9);
-$arrow-padding:           1em;
-$arrow-size:              1.5em;
+$arrow-bg:                #fff !default;
+$arrow-bg-hover:          rgba(255, 255, 255, 0.9) !default;
+$arrow-padding:           1em !default;
+$arrow-size:              1.5em !default;
 
 // Breakpoints
 $breakpoints: (

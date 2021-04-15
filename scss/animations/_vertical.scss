@@ -1,0 +1,17 @@
+.#{$class-prefix} {
+  &-vertical {
+    --#{$vars-prefix}arrow-right: "\e803";
+    --#{$vars-prefix}arrow-left: "\e801";
+    &::after {
+      @include aspect-ratio;
+    }
+    .#{$class-prefix}-arrows {
+      flex-direction: column;
+    }
+    .#{$class-prefix}-content {
+      transform: translate3d(0, calc((var(--#{$vars-prefix}pos,0) - 1) * -100%), 0);
+      @include inset;
+      flex-direction: column;
+    }
+  }
+}
