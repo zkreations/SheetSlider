@@ -2,13 +2,15 @@
 .#{$class-prefix} {
   &-arrows {
     display: flex;
-    bottom: var(--#{$vars-prefix}gap);
+    bottom: calc(var(--#{$vars-prefix}gap) + var(--#{$vars-prefix}navigation-size));
     right: 0;
     position: absolute;
     label {
       &::before {
         content: var(--#{$vars-prefix}r, var(--#{$vars-prefix}l));
-        padding: 1rem;
+        padding: var(--#{$vars-prefix}arrow-padding, #{$arrow-padding});
+        font-size: var(--#{$vars-prefix}arrow-size, #{$arrow-size});
+        color: #010101;
         cursor: pointer;
         background-color: var(--#{$vars-prefix}arrow-bg, #{$arrow-bg});
         transition: background-color calc(var(--#{$vars-prefix}duration) * .5);

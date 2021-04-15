@@ -27,10 +27,13 @@ $meta-text-shadow:        0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 5px rgba(0, 0, 0, 
 // Navegacion
 $navigation-bg:           rgba(255, 255, 255, 0.5);
 $navigation-bg-hover:     rgba(255, 255, 255, 0.75);
+$navigation-size:         5px;
 
 // Flechas
 $arrow-bg:                #fff;
 $arrow-bg-hover:          rgba(255, 255, 255, 0.9);
+$arrow-padding:           1em;
+$arrow-size:              1.5em;
 
 // Breakpoints
 $breakpoints: (

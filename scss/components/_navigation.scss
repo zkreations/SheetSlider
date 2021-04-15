@@ -14,7 +14,7 @@
       will-change: background-color;
       &::before {
         content: "";
-        padding-bottom: 5px;
+        padding-bottom: var(--#{$vars-prefix}navigation-size);
         display: block;
         background-color: var(--#{$vars-prefix}color);
         opacity: var(--#{$vars-prefix}i,0);

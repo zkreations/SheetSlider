@@ -17,6 +17,7 @@
   --ss-gap: 3em;
   --ss-arrow-right: "\e828";
   --ss-arrow-left: "\e827";
+  --ss-navigation-size: 5px;
   font-size: 14px;
   overflow: hidden;
   position: relative;
@@ -24,13 +25,6 @@
 
 .sheet input {
   display: none;
-}
-
-.sheet-content {
-  display: flex;
-  transform: translate3d(calc((var(--ss-pos,0) - 1) * -100%), 0, 0);
-  transition: transform var(--ss-duration) var(--ss-timing, cubic-bezier(0.5, 0, 0.1, 1));
-  will-change: transform;
 }
 
 .sheet-arrows label::before {
@@ -43,6 +37,13 @@
   text-align: center;
   line-height: 1;
   vertical-align: middle;
+}
+
+.sheet-content {
+  display: flex;
+  transform: translate3d(calc((var(--ss-pos,0) - 1) * -100%), 0, 0);
+  transition: transform var(--ss-duration) var(--ss-timing, cubic-bezier(0.5, 0, 0.1, 1));
+  will-change: transform;
 }
 
 .sheet-item {
@@ -163,14 +164,16 @@
 
 .sheet-arrows {
   display: flex;
-  bottom: var(--ss-gap);
+  bottom: calc(var(--ss-gap) + var(--ss-navigation-size));
   right: 0;
   position: absolute;
 }
 
 .sheet-arrows label::before {
   content: var(--ss-r, var(--ss-l));
-  padding: 1rem;
+  padding: var(--ss-arrow-padding, 1em);
+  font-size: var(--ss-arrow-size, 1.5em);
+  color: #010101;
   cursor: pointer;
   background-color: var(--ss-arrow-bg, #fff);
   transition: background-color calc(var(--ss-duration) * .5);
@@ -266,7 +269,7 @@
 
 .sheet-buttons label::before {
   content: "";
-  padding-bottom: 5px;
+  padding-bottom: var(--ss-navigation-size);
   display: block;
   background-color: var(--ss-color);
   opacity: var(--ss-i, 0);
