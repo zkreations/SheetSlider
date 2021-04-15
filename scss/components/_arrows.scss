@@ -3,11 +3,21 @@
   &-arrows {
     display: flex;
     bottom: var(--#{$vars-prefix}gap);
-    right: var(--#{$vars-prefix}gap);
+    right: 0;
     position: absolute;
     label {
       &::before {
         content: var(--#{$vars-prefix}r, var(--#{$vars-prefix}l));
+        padding: 1rem;
+        cursor: pointer;
+        background-color: var(--#{$vars-prefix}arrow-bg, #{$arrow-bg});
+        transition: background-color calc(var(--#{$vars-prefix}duration) * .5);
+        will-change: background-color;
+      }
+      &:hover {
+        &::before {
+        background-color: var(--#{$vars-prefix}arrow-bg-hover, #{$arrow-bg-hover});
+        }
       }
     }
   }

@@ -18,19 +18,10 @@
   --#{$vars-prefix}color: #{$main-color};
   --#{$vars-prefix}duration: #{$transition-duration};
   --#{$vars-prefix}gap: #{$main-gap};
-
-
-  --#{$vars-prefix}meta-color: #{$meta-color};
-
-  --#{$vars-prefix}meta-title-size: #{$meta-title-size};
-  --#{$vars-prefix}meta-text-size: #{$meta-text-size};
-
   --#{$vars-prefix}arrow-right: "\e828";
   --#{$vars-prefix}arrow-left: "\e827";
-
   font-size: $font-size-base;
   overflow: hidden;
-  line-height: 1;
   position: relative;
 
   input {
@@ -52,11 +43,9 @@
       -moz-osx-font-smoothing: grayscale;
       font-style: normal;
       font-weight: normal;
-      text-transform: none;
       display: inline-block;
-      text-decoration: none;
-      line-height: 1;
       text-align: center;
+      line-height: 1;
       vertical-align: middle;
     }
   }

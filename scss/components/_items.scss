@@ -24,7 +24,7 @@
     font-weight: $meta-font-weight;
     text-shadow: $meta-text-shadow;
     position: absolute;
-    color: var(--#{$vars-prefix}meta-color);
+    color: var(--#{$vars-prefix}meta-color, #{$meta-color});
     top: var(--#{$vars-prefix}gap);
     left: var(--#{$vars-prefix}gap);
     opacity: var(--#{$vars-prefix}i,0);
@@ -38,10 +38,10 @@
       margin-top: 0;
       margin-bottom: 0;
       &:first-child {
-        font-size: var(--#{$vars-prefix}meta-title-size);
+        font-size: var(--#{$vars-prefix}meta-title-size, #{$meta-title-size});
       }
       + * {
-        font-size: var(--#{$vars-prefix}meta-text-size);
+        font-size: var(--#{$vars-prefix}meta-text-size, #{$meta-text-size});
       }
     }
   }

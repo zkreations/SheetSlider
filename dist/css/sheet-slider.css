@@ -15,14 +15,10 @@
   --ss-color: #059669;
   --ss-duration: 1s;
   --ss-gap: 3em;
-  --ss-meta-color: #fff;
-  --ss-meta-title-size: 2.5em;
-  --ss-meta-text-size: 1.2em;
   --ss-arrow-right: "\e828";
   --ss-arrow-left: "\e827";
   font-size: 14px;
   overflow: hidden;
-  line-height: 1;
   position: relative;
 }
 
@@ -43,11 +39,9 @@
   -moz-osx-font-smoothing: grayscale;
   font-style: normal;
   font-weight: normal;
-  text-transform: none;
   display: inline-block;
-  text-decoration: none;
-  line-height: 1;
   text-align: center;
+  line-height: 1;
   vertical-align: middle;
 }
 
@@ -79,7 +73,7 @@
   font-weight: 500;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 5px rgba(0, 0, 0, 0.2);
   position: absolute;
-  color: var(--ss-meta-color);
+  color: var(--ss-meta-color, #fff);
   top: var(--ss-gap);
   left: var(--ss-gap);
   opacity: var(--ss-i, 0);
@@ -96,11 +90,11 @@
 }
 
 .sheet-meta *:first-child {
-  font-size: var(--ss-meta-title-size);
+  font-size: var(--ss-meta-title-size, 2.5em);
 }
 
 .sheet-meta * + * {
-  font-size: var(--ss-meta-text-size);
+  font-size: var(--ss-meta-text-size, 1.2em);
 }
 
 .sheet input:nth-child(1):checked ~ * {
@@ -170,12 +164,21 @@
 .sheet-arrows {
   display: flex;
   bottom: var(--ss-gap);
-  right: var(--ss-gap);
+  right: 0;
   position: absolute;
 }
 
 .sheet-arrows label::before {
   content: var(--ss-r, var(--ss-l));
+  padding: 1rem;
+  cursor: pointer;
+  background-color: var(--ss-arrow-bg, #fff);
+  transition: background-color calc(var(--ss-duration) * .5);
+  will-change: background-color;
+}
+
+.sheet-arrows label:hover::before {
+  background-color: var(--ss-arrow-bg-hover, rgba(255, 255, 255, 0.9));
 }
 
 .sheet input:nth-child(1):checked ~ .sheet-arrows > :nth-child(2) {
@@ -256,7 +259,7 @@
 .sheet-buttons label {
   flex: 1 0 auto;
   cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.25);
+  background-color: var(--ss-navigation-bg, rgba(255, 255, 255, 0.5));
   transition: background-color calc(var(--ss-duration) * .5);
   will-change: background-color;
 }
@@ -272,7 +275,7 @@
 }
 
 .sheet-buttons label:hover {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: var(--ss-navigation-bg-hover, rgba(255, 255, 255, 0.75));
 }
 
 /*# sourceMappingURL=sheet-slider.css.map */
