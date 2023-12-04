@@ -1,20 +1,10 @@
 .sheet {
   &-vertical {
-    --sheet-arrow-right: "\e803";
-    --sheet-arrow-left: "\e801";
-
-    &::after {
-      position: absolute;
-      inset: 0;
-    }
-
     .sheet-arrows {
       flex-direction: column;
     }
 
     .sheet-content {
-      position: absolute;
-      inset: 0;
       transform: translate3d(0, calc((var(--ss-current,0) - 1) * -100%), 0);
       flex-direction: column;
     }

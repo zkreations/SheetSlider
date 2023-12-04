@@ -29,24 +29,16 @@
       }
     }
   }
-}
 
-// if first or last slide is active...
-input:checked {
-
-  // Right arrow
-  &:last-of-type {
-    ~ .sheet-arrows label:first-child:not(:only-child) {
-      --ss-ar: 1;
-      order: $slider-items;
-    }
+  // if first or last item is checked, change the order of the arrows
+  // Note: :not(:only-child) is used to prevent the arrow from being hidden when there is only one item
+  @at-root input:checked:last-of-type ~ &-arrows label:first-child:not(:only-child) {
+    --ss-ar: 1;
+    order: $slider-items;
   }
-
-  // Left arrow
-  &:first-of-type {
-    ~ .sheet-arrows label:last-child:not(:only-child) {
-      --ss-ar: 0;
-      order: -1;
-    }
+  
+  @at-root input:checked:first-of-type ~ &-arrows label:last-child:not(:only-child) {
+    --ss-ar: 0;
+    order: -1;
   }
 }

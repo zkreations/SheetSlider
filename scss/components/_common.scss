@@ -16,6 +16,7 @@
   --sheet-arrow-size: #{$arrow-size};
   --sheet-duration: #{$transition-duration};
   --sheet-dot-size: #{$dots-size};
+  --sheet-timing: #{$transition-timing};
 
   // Do not change
   --ss-td: var(--sheet-duration);

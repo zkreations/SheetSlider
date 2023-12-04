@@ -3,7 +3,7 @@
     position: absolute;
     inset: 0;
     opacity: var(--ss-active, 0);
-    transition: opacity 1s;
+    transition: opacity var(--ss-td) var(--sheet-timing);
     pointer-events: var(--ss-current, none);
   }
 }

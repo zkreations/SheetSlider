@@ -12,11 +12,11 @@
 
   &:not(&-fade) &-content {
     display: flex;
-    transition: transform var(--ss-td) var(--ss-timing, #{$transition-timing});
+    transition: transform var(--ss-td) var(--sheet-timing);
   }
   
   &:not(&-fade):not(&-vertical) &-content {
-    transform: translate3d(calc((var(--ss-current,0) - 1) * -100%), 0, 0);
+    transform: var(--ss-t3d, translate3d(calc((var(--ss-current,0) - 1) * -100%), 0, 0));
   }
 }
 
