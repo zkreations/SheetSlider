@@ -13,12 +13,12 @@
     color: var(--sheet-text-color, #{$text-color});
     text-shadow: var(--sheet-text-shadow, #{$text-shadow});
     position: absolute;
-    top: var(--ss-sp);
-    left: var(--ss-sp);
+    top: var(--sheet-space);
+    left: var(--sheet-space);
     opacity: var(--ss-active, 0);
     transform: var(--ss-active, translate3d(0, 4em, 0));
-    transition-delay: calc(var(--ss-td) * .5);
-    transition-duration: calc(var(--ss-td) * .75);
+    transition-delay: calc(var(--sheet-duration) * .5);
+    transition-duration: calc(var(--sheet-duration) * .75);
     transition-property: transform, opacity;
 
     a {

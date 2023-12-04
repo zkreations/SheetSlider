@@ -3,11 +3,11 @@
     display: flex;
     gap: .25em;
     position: absolute;
-    inset: auto var(--ss-sp) 0;
+    inset: auto var(--sheet-space) 0;
 
     label {
       background-color: var(--sheet-dot-bg, #{$dots-bg});
-      transition: background-color calc(var(--ss-td) * .5);
+      transition: background-color calc(var(--sheet-duration) * .5);
       flex: 1 0 auto;
       cursor: pointer;
 
@@ -17,7 +17,7 @@
         display: block;
         padding-bottom: var(--sheet-dot-size);
         opacity: var(--ss-active, 0);
-        transition: opacity calc(var(--ss-td) * .5);
+        transition: opacity calc(var(--sheet-duration) * .5);
       }
 
       &:hover {

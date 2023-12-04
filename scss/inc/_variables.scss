@@ -8,7 +8,7 @@ $slider-items:            5 !default;
 // General
 $main-color:              #059669 !default;
 $main-transition:         1s !default;
-$main-space:              15px !default;
+$main-space:              calc(15px + 1.5625vw) !default;
 $main-ratio:              "21/9" !default;
 $font-weight:             500 !default;
 $transition-duration:     1s !default;

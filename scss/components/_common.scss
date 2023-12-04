@@ -20,7 +20,7 @@
 
   // Do not change
   --ss-td: var(--sheet-duration);
-  --ss-sp: calc(var(--sheet-space) + 1.5625vw);
+  --ss-sp: #{$main-space};
 
   overflow: hidden;
   position: relative;

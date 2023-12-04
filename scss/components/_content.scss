@@ -3,12 +3,12 @@
   &-content {
     position: relative;
     height: 100%;
-    flex-direction: var(--ss-fd, row);
+    flex-direction: var(--ss-flex-direction, row);
   }
 
   &:not(&-fade) &-content {
     display: flex;
-    transition: transform var(--ss-td) var(--sheet-timing);
+    transition: transform var(--sheet-duration) var(--sheet-timing);
   }
   
   &:not(&-fade):not(&-vertical) &-content {

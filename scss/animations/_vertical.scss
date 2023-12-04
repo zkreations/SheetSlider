@@ -1,7 +1,7 @@
 .sheet {
   &-vertical {
-    --ss-ad: 90;
-    --ss-fd: column;
+    --ss-initial-arrow-r: 90;
+    --ss-flex-direction: column;
 
     .sheet-content {
       transform: translate3d(0, calc((var(--ss-current,0) - 1) * -100%), 0);
