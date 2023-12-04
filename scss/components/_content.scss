@@ -1,20 +1,22 @@
 
-.#{$class-prefix} {
+.sheet {
   &-content {
     position: relative;
-  }
-  &:not(&-fade) {
-    .#{$class-prefix}-content {
-      display: flex;
-      transition: transform var(--#{$vars-prefix}duration) var(--#{$vars-prefix}timing, #{$transition-timing});
-      will-change: transform;
+  
+    &::after {
+      content: "";
+      display: block;
+      padding-top: calc((var(--sheet-ratio-y, 9) / var(--sheet-ratio-x, 21)) * 100%);
     }
+  }
+
+  &:not(&-fade) &-content {
+    display: flex;
+    transition: transform var(--ss-td) var(--ss-timing, #{$transition-timing});
   }
   
-  &:not(&-fade):not(&-vertical) {
-    .#{$class-prefix}-content {
-      transform: translate3d(calc((var(--#{$vars-prefix}pos,0) - 1) * -100%), 0, 0);
-    }
+  &:not(&-fade):not(&-vertical) &-content {
+    transform: translate3d(calc((var(--ss-current,0) - 1) * -100%), 0, 0);
   }
 }
 

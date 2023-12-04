@@ -1,0 +1,28 @@
+.sheet {
+  &-dots {
+    display: flex;
+    gap: .25em;
+    position: absolute;
+    inset: auto var(--ss-sp) 0;
+
+    label {
+      background-color: var(--sheet-dot-bg, #{$dots-bg});
+      transition: background-color calc(var(--ss-td) * .5);
+      flex: 1 0 auto;
+      cursor: pointer;
+
+      &::before {
+        content: "";
+        background-color: var(--sheet-accent);
+        display: block;
+        padding-bottom: var(--sheet-dot-size);
+        opacity: var(--ss-active, 0);
+        transition: opacity calc(var(--ss-td) * .5);
+      }
+
+      &:hover {
+        background-color: var(--sheet-dot-hover, #{$dots-bg-hover});
+      }
+    }
+  }
+}

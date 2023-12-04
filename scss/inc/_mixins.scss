@@ -1,30 +1,6 @@
-// Generador de medios
-//
-// Añade puntos de quiebre basados en los breakpoints del proyecto
-@mixin media($direction, $key) {
-  $breakpoint: map-get($breakpoints, $key);
-  $media: if($direction == "max", ($breakpoint - 1), $breakpoint);
-  @if not $breakpoint {
-    @warn 'El Breakpoint no esta definido';
-  } @else {
-    @media (#{$direction}-width: $media) {
-      @content;
-    }
-  }
-}
-
 // Relacion de aspecto
 @mixin aspect-ratio {
   display: block;
   content: "";
-  padding-top: var(--#{$vars-prefix}ratio);
-}
-
-// Estirar
-@mixin inset {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
+  padding-top: calc((var(--sheet-ratio-y, 9) / var(--sheet-ratio-x, 21)) * 100%);
 }

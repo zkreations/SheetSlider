@@ -1,0 +1,222 @@
+@charset "UTF-8";
+/*
+ * sheetslider v3.0.0
+ * Copyright 2018-2023
+ * Developed by zkreations (https://zkreations.com/)
+ * Licensed under MIT (https://github.com/zkreations/sheetslider/blob/master/LICENSE)
+ */
+.sheet {
+  --sheet-accent: #059669;
+  --sheet-space: 15px;
+  --sheet-arrow-size: 1.5em;
+  --sheet-duration: 1s;
+  --sheet-dot-size: 6px;
+  --ss-td: var(--sheet-duration);
+  --ss-sp: calc(var(--sheet-space) + 1.5625vw);
+  overflow: hidden;
+  position: relative;
+}
+.sheet *,
+.sheet *::before,
+.sheet *::after {
+  margin: 0;
+  box-sizing: border-box;
+}
+.sheet input {
+  display: none;
+}
+
+.sheet-content {
+  position: relative;
+}
+.sheet-content::after {
+  content: "";
+  display: block;
+  padding-top: calc(var(--sheet-ratio-y, 9) / var(--sheet-ratio-x, 21) * 100%);
+}
+.sheet:not(.sheet-fade) .sheet-content {
+  display: flex;
+  transition: transform var(--ss-td) var(--ss-timing, cubic-bezier(0.5, 0, 0.1, 1));
+}
+.sheet:not(.sheet-fade):not(.sheet-vertical) .sheet-content {
+  transform: translate3d(calc((var(--ss-current, 0) - 1) * -100%), 0, 0);
+}
+
+.sheet:not(.sheet-fade) .sheet-item {
+  flex: 1 0 100%;
+  position: relative;
+}
+.sheet-item {
+  overflow: hidden;
+}
+.sheet-image {
+  display: block;
+  object-fit: cover;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.sheet-meta {
+  font-weight: 500;
+  color: var(--sheet-text-color, #fff);
+  text-shadow: var(--sheet-text-shadow, 0 1px 1px rgba(0, 0, 0, 0.3), 0 1px 5px rgba(0, 0, 0, 0.15));
+  position: absolute;
+  top: var(--ss-sp);
+  left: var(--ss-sp);
+  opacity: var(--ss-active, 0);
+  transform: var(--ss-active, translate3d(0, 4em, 0));
+  transition-delay: calc(var(--ss-td) * 0.5);
+  transition-duration: calc(var(--ss-td) * 0.75);
+  transition-property: transform, opacity;
+}
+.sheet-meta a {
+  color: var(--sheet-accent);
+  text-decoration: none;
+}
+.sheet-title {
+  font-size: var(--sheet-title-size, clamp(1.25rem, 2.5vw, 2rem));
+}
+.sheet-text {
+  font-size: var(--sheet-text-size, clamp(0.875rem, 2vw, 1.125rem));
+}
+
+.sheet-arrows {
+  bottom: var(--ss-sp);
+  position: absolute;
+  right: 0;
+  display: flex;
+  bottom: calc(var(--ss-sp) + var(--sheet-dot-size));
+  transition: transform calc(var(--ss-td) * 0.5);
+}
+.sheet-arrows label {
+  padding: var(--sheet-arrow-padding, 1em);
+  background-color: var(--sheet-arrow-bg, #fff);
+  display: var(--ss-ar, none);
+  cursor: pointer;
+}
+.sheet-arrows label::before {
+  content: "";
+  transform: rotate(calc(var(--ss-ar, 0) * var(--ss-ad, 180deg)));
+  background-image: var(--sheet-arrow, url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='m17 5-2-2-9 9 9 9 2-2-7-7Z'/></svg>"));
+  width: var(--sheet-arrow-size);
+  height: var(--sheet-arrow-size);
+  transition: background-color var(--ss-td);
+  display: block;
+}
+.sheet:not(:hover) .sheet-arrows {
+  transform: translateX(calc(100% + var(--ss-sp)));
+}
+
+.sheet-dots {
+  display: flex;
+  gap: 0.25em;
+  position: absolute;
+  inset: auto var(--ss-sp) 0;
+}
+.sheet-dots label {
+  background-color: var(--sheet-dot-bg, rgba(255, 255, 255, 0.5));
+  transition: background-color calc(var(--ss-td) * 0.5);
+  flex: 1 0 auto;
+  cursor: pointer;
+}
+.sheet-dots label::before {
+  content: "";
+  background-color: var(--sheet-accent);
+  display: block;
+  padding-bottom: var(--sheet-dot-size);
+  opacity: var(--ss-active, 0);
+  transition: opacity calc(var(--ss-td) * 0.5);
+}
+.sheet-dots label:hover {
+  background-color: var(--sheet-dot-hover, rgba(255, 255, 255, 0.75));
+}
+
+input:nth-child(1):checked ~ .sheet-content {
+  --ss-current: 1;
+}
+input:nth-child(1):checked ~ :where(.sheet-content, .sheet-dots) > :nth-child(1) {
+  --ss-active: 1;
+}
+input:nth-child(2):checked ~ .sheet-content {
+  --ss-current: 2;
+}
+input:nth-child(2):checked ~ :where(.sheet-content, .sheet-dots) > :nth-child(2) {
+  --ss-active: 1;
+}
+input:nth-child(3):checked ~ .sheet-content {
+  --ss-current: 3;
+}
+input:nth-child(3):checked ~ :where(.sheet-content, .sheet-dots) > :nth-child(3) {
+  --ss-active: 1;
+}
+input:nth-child(4):checked ~ .sheet-content {
+  --ss-current: 4;
+}
+input:nth-child(4):checked ~ :where(.sheet-content, .sheet-dots) > :nth-child(4) {
+  --ss-active: 1;
+}
+input:nth-child(5):checked ~ .sheet-content {
+  --ss-current: 5;
+}
+input:nth-child(5):checked ~ :where(.sheet-content, .sheet-dots) > :nth-child(5) {
+  --ss-active: 1;
+}
+input:nth-child(1):checked ~ .sheet-arrows > :nth-child(2) {
+  --ss-ar: 1;
+}
+input:nth-child(2):checked ~ .sheet-arrows > :nth-child(1) {
+  --ss-ar: 0;
+}
+input:nth-child(2):checked ~ .sheet-arrows > :nth-child(3) {
+  --ss-ar: 1;
+}
+input:nth-child(3):checked ~ .sheet-arrows > :nth-child(2) {
+  --ss-ar: 0;
+}
+input:nth-child(3):checked ~ .sheet-arrows > :nth-child(4) {
+  --ss-ar: 1;
+}
+input:nth-child(4):checked ~ .sheet-arrows > :nth-child(3) {
+  --ss-ar: 0;
+}
+input:nth-child(4):checked ~ .sheet-arrows > :nth-child(5) {
+  --ss-ar: 1;
+}
+input:nth-child(5):checked ~ .sheet-arrows > :nth-child(4) {
+  --ss-ar: 0;
+}
+
+input:checked:last-of-type ~ .sheet-arrows label:first-child:not(:only-child) {
+  --ss-ar: 1;
+  order: 5;
+}
+input:checked:first-of-type ~ .sheet-arrows label:last-child:not(:only-child) {
+  --ss-ar: 0;
+  order: -1;
+}
+
+.sheet-fade .sheet-item {
+  position: absolute;
+  inset: 0;
+  opacity: var(--ss-current, 0);
+  transition: opacity 1s;
+  pointer-events: var(--ss-current, none);
+}
+
+.sheet-vertical {
+  --sheet-arrow-right: "";
+  --sheet-arrow-left: "";
+}
+.sheet-vertical::after {
+  position: absolute;
+  inset: 0;
+}
+.sheet-vertical .sheet-arrows {
+  flex-direction: column;
+}
+.sheet-vertical .sheet-content {
+  position: absolute;
+  inset: 0;
+  transform: translate3d(0, calc((var(--ss-current, 0) - 1) * -100%), 0);
+  flex-direction: column;
+}

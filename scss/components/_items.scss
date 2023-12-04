@@ -1,59 +1,46 @@
-.#{$class-prefix}:not(.#{$class-prefix}-fade) {
-  .#{$class-prefix}-item {
-    flex-shrink: 0;
-    flex-basis: 100%;
+.sheet {
+  &:not(&-fade) &-item {
+    flex: 1 0 100%;
     position: relative;
   }
-}
 
-.#{$class-prefix} {
   &-item {
-    &::after {
-      @include aspect-ratio;
-    }
-    img {
-      display: block;
-      object-fit: cover;
-      @include inset;
-    }
+    overflow: hidden;
+  }
+
+  &-image {
+    display: block;
+    object-fit: cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
   }
 
   &-meta {
     font-weight: $font-weight;
-    text-shadow: var(--#{$vars-prefix}text-shadow, $text-shadow);
+    color: var(--sheet-text-color, #{$text-color});
+    text-shadow: var(--sheet-text-shadow, #{$text-shadow});
     position: absolute;
-    color: var(--#{$vars-prefix}text-color, #{$text-color});
-    top: var(--#{$vars-prefix}gap);
-    left: var(--#{$vars-prefix}gap);
-    opacity: var(--#{$vars-prefix}i,0);
-    transform: translate3d(0, calc((var(--#{$vars-prefix}i, 5) - 1) * 1em), 0);
-    transition-delay: calc(var(--#{$vars-prefix}duration) * .5);
-    transition-duration: calc(var(--#{$vars-prefix}duration) * .75);
+    top: var(--ss-sp);
+    left: var(--ss-sp);
+    opacity: var(--ss-active, 0);
+    transform: var(--ss-active, translate3d(0, 4em, 0));
+    transition-delay: calc(var(--ss-td) * .5);
+    transition-duration: calc(var(--ss-td) * .75);
     transition-property: transform, opacity;
-    will-change: opacity, transform;
 
-    * {
-      margin-top: 0;
-      margin-bottom: 0;
-      &:first-child {
-        font-size: var(--#{$vars-prefix}title-size, #{$title-size});
-      }
-      + * {
-        font-size: var(--#{$vars-prefix}text-size, #{$text-size});
-      }
+    a {
+      color: var(--sheet-accent);
+      text-decoration: none;
     }
   }
 
-  // Mueve el contenedor dependiendo del estado de los input
-  @for $i from 1 through ($slider-items) {
-    input:nth-child(#{$i}):checked {
-      ~ * {
-        --#{$vars-prefix}pos: #{$i};
-        > :nth-child(#{$i}) {
-          --#{$vars-prefix}i: 1;
-        }
-      }
-    }
+  &-title {
+    font-size: var(--sheet-title-size, #{$title-size});
+  }
+
+  &-text {
+    font-size: var(--sheet-text-size, #{$text-size});
   }
 }
 

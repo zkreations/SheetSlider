@@ -1,0 +1,38 @@
+
+// Prefix
+// Variables with the prefix "--sheet" are safe to modify
+// Variables with the prefix "--ss" should not be modified
+
+// Meaning of variables
+// td = transition-duration
+// sp = space
+// ad = arrow direction
+// ar = arrow rotation
+
+.sheet {
+  // You can change these variables
+  --sheet-accent: #{$main-color};
+  --sheet-space: #{$main-space};
+  --sheet-arrow-size: #{$arrow-size};
+  --sheet-duration: #{$transition-duration};
+  --sheet-dot-size: #{$dots-size};
+
+  // Do not change
+  --ss-td: var(--sheet-duration);
+  --ss-sp: calc(var(--sheet-space) + 1.5625vw);
+
+  overflow: hidden;
+  position: relative;
+
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  input {
+    display: none;
+  }
+}
+

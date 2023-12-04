@@ -1,0 +1,52 @@
+// Code that moves the slider
+.sheet {
+  @for $i from 1 through ($slider-items) {
+    // Set the current slide
+    input:nth-child(#{$i}):checked ~ &-content {
+      --ss-current: #{$i};
+    }
+
+    // Set the active dot and item
+    input:nth-child(#{$i}):checked ~ :where(&-content, &-dots) > :nth-child(#{$i}) {
+      --ss-active: 1;
+    }
+  }
+
+  @for $i from 1 through ($slider-items) {
+    input:nth-child(#{$i}):checked ~ &-arrows {
+      // Left arrow
+      @if ($i != 1) {
+        > :nth-child(#{$i - 1}) {
+          --ss-ar: 0;
+        }
+      }
+
+      // Right arrow
+      @if ($i != $slider-items) {
+        > :nth-child(#{$i + 1}) {
+          --ss-ar: 1;
+        }
+      }
+    }
+  }
+}
+
+// if first or last slide is active...
+input:checked {
+
+  // Right arrow
+  &:last-of-type {
+    ~ .sheet-arrows label:first-child:not(:only-child) {
+      --ss-ar: 1;
+      order: $slider-items;
+    }
+  }
+
+  // Left arrow
+  &:first-of-type {
+    ~ .sheet-arrows label:last-child:not(:only-child) {
+      --ss-ar: 0;
+      order: -1;
+    }
+  }
+}

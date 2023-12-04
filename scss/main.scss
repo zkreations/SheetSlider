@@ -1,20 +1,21 @@
-/*!
+/*
  * sheetslider v3.0.0
- * Copyright 2018-2021
+ * Copyright 2018-2023
  * Developed by zkreations (https://zkreations.com/)
  * Licensed under MIT (https://github.com/zkreations/sheetslider/blob/master/LICENSE)
  */
 
 // Dependencias
 @import "inc/variables";
-@import "inc/mixins";
-@import "inc/core";
 
 // Componentes
+@import "components/common";
 @import "components/content";
 @import "components/items";
 @import "components/arrows";
-@import "components/navigation";
+@import "components/dots";
+@import "components/engine";
+
 
 // Animaciones alternativas
 @import "animations/fade";

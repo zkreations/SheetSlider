@@ -1,13 +1,9 @@
-.#{$class-prefix}-fade {
-  .#{$class-prefix}-item {
-    @include inset;
-    opacity: var(--ss-i,0);
+.sheet-fade {
+  .sheet-item {
+    position: absolute;
+    inset: 0;
+    opacity: var(--ss-current, 0);
     transition: opacity 1s;
-    pointer-events: var(--ss-i,none);
-  }
-  .#{$class-prefix}-content {
-    &::after {
-      @include aspect-ratio;
-    }
+    pointer-events: var(--ss-current, none);
   }
 }
