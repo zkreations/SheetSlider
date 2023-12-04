@@ -24,7 +24,7 @@
       // Right arrow
       @if ($i != $slider-items) {
         > :nth-child(#{$i + 1}) {
-          --ss-ar: 1;
+          --ss-ar: 180;
         }
       }
     }
@@ -33,7 +33,7 @@
   // if first or last item is checked, change the order of the arrows
   // Note: :not(:only-child) is used to prevent the arrow from being hidden when there is only one item
   @at-root input:checked:last-of-type ~ &-arrows label:first-child:not(:only-child) {
-    --ss-ar: 1;
+    --ss-ar: 180;
     order: $slider-items;
   }
   

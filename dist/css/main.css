@@ -34,13 +34,14 @@
 .sheet-content {
   position: relative;
   height: 100%;
+  flex-direction: var(--ss-fd, row);
 }
 .sheet:not(.sheet-fade) .sheet-content {
   display: flex;
   transition: transform var(--ss-td) var(--sheet-timing);
 }
 .sheet:not(.sheet-fade):not(.sheet-vertical) .sheet-content {
-  transform: var(--ss-t3d, translate3d(calc((var(--ss-current, 0) - 1) * -100%), 0, 0));
+  transform: translate3d(calc((var(--ss-current, 0) - 1) * -100%), 0, 0);
 }
 
 .sheet:not(.sheet-fade) .sheet-item {
@@ -81,6 +82,7 @@
   display: flex;
   bottom: calc(var(--ss-sp) + var(--sheet-dot-size));
   transition: transform calc(var(--ss-td) * 0.5);
+  flex-direction: var(--ss-fd, row);
 }
 .sheet-arrows label {
   padding: var(--sheet-arrow-padding, 1em);
@@ -90,7 +92,7 @@
 }
 .sheet-arrows label::before {
   content: "";
-  transform: rotate(calc(var(--ss-ar, 0) * var(--ss-ad, 180deg)));
+  transform: rotate(calc((var(--ss-ad, 0) + var(--ss-ar)) * 1deg));
   background-image: var(--sheet-arrow, url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='m17 5-2-2-9 9 9 9 2-2-7-7Z'/></svg>"));
   width: var(--sheet-arrow-size);
   height: var(--sheet-arrow-size);
@@ -156,31 +158,31 @@ input:nth-child(5):checked ~ :where(.sheet-content, .sheet-dots) > :nth-child(5)
   --ss-active: 1;
 }
 input:nth-child(1):checked ~ .sheet-arrows > :nth-child(2) {
-  --ss-ar: 1;
+  --ss-ar: 180;
 }
 input:nth-child(2):checked ~ .sheet-arrows > :nth-child(1) {
   --ss-ar: 0;
 }
 input:nth-child(2):checked ~ .sheet-arrows > :nth-child(3) {
-  --ss-ar: 1;
+  --ss-ar: 180;
 }
 input:nth-child(3):checked ~ .sheet-arrows > :nth-child(2) {
   --ss-ar: 0;
 }
 input:nth-child(3):checked ~ .sheet-arrows > :nth-child(4) {
-  --ss-ar: 1;
+  --ss-ar: 180;
 }
 input:nth-child(4):checked ~ .sheet-arrows > :nth-child(3) {
   --ss-ar: 0;
 }
 input:nth-child(4):checked ~ .sheet-arrows > :nth-child(5) {
-  --ss-ar: 1;
+  --ss-ar: 180;
 }
 input:nth-child(5):checked ~ .sheet-arrows > :nth-child(4) {
   --ss-ar: 0;
 }
 input:checked:last-of-type ~ .sheet-arrows label:first-child:not(:only-child) {
-  --ss-ar: 1;
+  --ss-ar: 180;
   order: 5;
 }
 
@@ -197,10 +199,10 @@ input:checked:first-of-type ~ .sheet-arrows label:last-child:not(:only-child) {
   pointer-events: var(--ss-current, none);
 }
 
-.sheet-vertical .sheet-arrows {
-  flex-direction: column;
+.sheet-vertical {
+  --ss-ad: 90;
+  --ss-fd: column;
 }
 .sheet-vertical .sheet-content {
   transform: translate3d(0, calc((var(--ss-current, 0) - 1) * -100%), 0);
-  flex-direction: column;
 }

@@ -6,6 +6,7 @@
     display: flex;
     bottom: calc(var(--ss-sp) + var(--sheet-dot-size));
     transition: transform calc(var(--ss-td) * .5);
+    flex-direction: var(--ss-fd, row);
 
     label {
       padding: var(--sheet-arrow-padding, #{$arrow-padding});
@@ -15,7 +16,7 @@
 
       &::before {
         content: "";
-        transform: rotate(calc((var(--ss-ar, 0) * var(--ss-ad, 180deg))));
+        transform: rotate(calc((var(--ss-ad, 0) + var(--ss-ar)) * 1deg));
         background-image: var(--sheet-arrow, #{$arrow-svg});
         width: var(--sheet-arrow-size);
         height: var(--sheet-arrow-size);

@@ -1,12 +1,10 @@
 .sheet {
   &-vertical {
-    .sheet-arrows {
-      flex-direction: column;
-    }
+    --ss-ad: 90;
+    --ss-fd: column;
 
     .sheet-content {
       transform: translate3d(0, calc((var(--ss-current,0) - 1) * -100%), 0);
-      flex-direction: column;
     }
   }
 }
