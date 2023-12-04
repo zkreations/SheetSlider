@@ -13,14 +13,14 @@
 
     input:nth-child(#{$i}):checked ~ &-arrows {
       // Left arrow
-      @if ($i != 1) {
+      @if  $i != 1 {
         > :nth-child(#{$i - 1}) {
           --ss-arrow-r: 0;
         }
       }
 
       // Right arrow
-      @if ($i != $slider-items) {
+      @if  $i != $slider-items {
         > :nth-child(#{$i + 1}) {
           --ss-arrow-r: 180;
         }
@@ -32,11 +32,13 @@
   // Note: :not(:only-child) is used to prevent the arrow from being hidden when there is only one item
   @at-root input:checked:last-of-type ~ &-arrows label:first-child:not(:only-child) {
     --ss-arrow-r: 180;
+
     order: $slider-items;
   }
   
   @at-root input:checked:first-of-type ~ &-arrows label:last-child:not(:only-child) {
     --ss-arrow-r: 0;
+
     order: -1;
   }
 }

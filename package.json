@@ -16,6 +16,7 @@
     "watch:css": "nodemon --watch scss/ --ext scss --exec \"npm run build:css\"",
     "autoprefixer": "postcss dist/css/main.css -u autoprefixer -r",
     "lint:css": "stylelint scss/**/*.scss --config .stylelintrc.json",
+    "lint:css:fix": "stylelint scss/**/*.scss --config .stylelintrc.json --fix",
     "serve": "servor dist --reload --browse"
   },
   "repository": {

@@ -18,10 +18,6 @@
   --sheet-dot-size: #{$dots-size};
   --sheet-timing: #{$transition-timing};
 
-  // Do not change
-  --ss-td: var(--sheet-duration);
-  --ss-sp: #{$main-space};
-
   overflow: hidden;
   position: relative;
   aspect-ratio: var(--sheet-ratio, #{$main-ratio});

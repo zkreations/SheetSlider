@@ -11,7 +11,7 @@
     transition: transform var(--sheet-duration) var(--sheet-timing);
   }
   
-  &:not(&-fade):not(&-vertical) &-content {
+  &:not(&-fade, &-vertical) &-content {
     transform: translate3d(calc((var(--ss-current,0) - 1) * -100%), 0, 0);
   }
 }

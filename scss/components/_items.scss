@@ -1,11 +1,11 @@
 .sheet {
+  &-item {
+    overflow: hidden;
+  }
+  
   &:not(&-fade) &-item {
     flex: 1 0 100%;
     position: relative;
-  }
-
-  &-item {
-    overflow: hidden;
   }
 
   &-meta {
