@@ -13,6 +13,7 @@
   --ss-sp: calc(var(--sheet-space) + 1.5625vw);
   overflow: hidden;
   position: relative;
+  aspect-ratio: var(--sheet-ratio, 21/9);
 }
 .sheet *,
 .sheet *::before,
@@ -23,14 +24,16 @@
 .sheet input {
   display: none;
 }
+.sheet img {
+  display: block;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
 
 .sheet-content {
   position: relative;
-}
-.sheet-content::after {
-  content: "";
-  display: block;
-  padding-top: calc(var(--sheet-ratio-y, 9) / var(--sheet-ratio-x, 21) * 100%);
+  height: 100%;
 }
 .sheet:not(.sheet-fade) .sheet-content {
   display: flex;
@@ -46,13 +49,6 @@
 }
 .sheet-item {
   overflow: hidden;
-}
-.sheet-image {
-  display: block;
-  object-fit: cover;
-  position: absolute;
-  width: 100%;
-  height: 100%;
 }
 .sheet-meta {
   font-weight: 500;

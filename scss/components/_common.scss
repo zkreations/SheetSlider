@@ -24,6 +24,7 @@
 
   overflow: hidden;
   position: relative;
+  aspect-ratio: var(--sheet-ratio, #{$main-ratio});
 
   *,
   *::before,
@@ -34,6 +35,13 @@
 
   input {
     display: none;
+  }
+
+  img {
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
   }
 }
 

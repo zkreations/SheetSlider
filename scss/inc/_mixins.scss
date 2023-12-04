@@ -1,6 +1,0 @@
-// Relacion de aspecto
-@mixin aspect-ratio {
-  display: block;
-  content: "";
-  padding-top: calc((var(--sheet-ratio-y, 9) / var(--sheet-ratio-x, 21)) * 100%);
-}

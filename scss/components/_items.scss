@@ -8,14 +8,6 @@
     overflow: hidden;
   }
 
-  &-image {
-    display: block;
-    object-fit: cover;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-  }
-
   &-meta {
     font-weight: $font-weight;
     color: var(--sheet-text-color, #{$text-color});
