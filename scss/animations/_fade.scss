@@ -1,8 +1,8 @@
-.sheet-fade {
-  .sheet-item {
+.sheet {
+  &-fade &-item {
     position: absolute;
     inset: 0;
-    opacity: var(--ss-current, 0);
+    opacity: var(--ss-active, 0);
     transition: opacity 1s;
     pointer-events: var(--ss-current, none);
   }
