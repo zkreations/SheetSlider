@@ -39,7 +39,7 @@
     }
 
     &:not(:hover) &-arrows {
-      transform: translateX(calc(100% + var(--sheet-space)));
+      transform: translateX(110%);
     }
   }
 }
