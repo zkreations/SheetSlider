@@ -1,9 +1,9 @@
 .sheet {
   &-arrows {
     position: absolute;
+    top: 0;
     right: 0;
     display: flex;
-    bottom: calc(var(--sheet-space) + var(--sheet-dot-size));
     transition: transform calc(var(--sheet-duration) * .5);
     flex-direction: var(--ss-flex-direction, row);
 
@@ -11,7 +11,12 @@
       padding: var(--sheet-arrow-padding, #{$arrow-padding});
       background-color: var(--sheet-arrow-bg, #{$arrow-bg});
       display: var(--ss-arrow-r, none);
+      transition: opacity calc(var(--sheet-duration) * .5);
       cursor: pointer;
+
+      &:hover {
+        opacity: 0.8;
+      }
 
       &::before {
         content: "";
@@ -27,7 +32,14 @@
 
 
   // Muestra las flechas
-  &:not(:hover) &-arrows {
-    transform: translateX(calc(100% + var(--sheet-space)));
+  @media (min-width: 768px) {
+    &-arrows {
+      top: auto;
+      bottom: calc(var(--sheet-space) + var(--sheet-dot-size));
+    }
+
+    &:not(:hover) &-arrows {
+      transform: translateX(calc(100% + var(--sheet-space)));
+    }
   }
 }

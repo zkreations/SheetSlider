@@ -24,6 +24,6 @@ $dots-size: 6px !default;
 // Arrows
 $arrow-bg: #fff !default;
 $arrow-bg-hover: rgb(255 255 255 / 90%) !default;
-$arrow-padding: 1em !default;
-$arrow-size: 1.5em !default;
+$arrow-padding: clamp(.75rem, 2.5vw, 1rem);
+$arrow-size: clamp(1rem, 2.5vw, 1.5rem) !default;
 $arrow-svg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='m17 5-2-2-9 9 9 9 2-2-7-7Z'/></svg>");
