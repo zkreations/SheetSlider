@@ -3,12 +3,6 @@
 // Variables with the prefix "--sheet" are safe to modify
 // Variables with the prefix "--ss" should not be modified
 
-// Meaning of variables
-// td = transition-duration
-// sp = space
-// ad = arrow direction
-// ar = arrow rotation
-
 .sheet {
   // You can change these variables
   --sheet-accent: #{$main-color};

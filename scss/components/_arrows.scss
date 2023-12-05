@@ -1,3 +1,4 @@
+// Create slider arrows
 .sheet {
   &-arrows {
     position: absolute;
@@ -30,8 +31,7 @@
     }
   }
 
-
-  // Muestra las flechas
+  // Show arrrows in mobile
   @media (min-width: 768px) {
     &-arrows {
       top: auto;
