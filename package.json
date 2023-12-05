@@ -11,10 +11,10 @@
   "scripts": {
     "dev": "npm-run-all --parallel watch:css serve",
     "compile": "npm-run-all build:css autoprefixer minify:css",
-    "build:css": "sass --style expanded --no-source-map scss/:./dist/css/",
+    "build:css": "sass --style expanded --no-source-map ./scss/:./dist/css/",
     "minify:css": "cleancss -O2 --with-rebase -o dist/css/main.min.css dist/css/main.css",
     "watch:css": "nodemon --watch scss/ --ext scss --exec \"npm run build:css\"",
-    "autoprefixer": "postcss dist/css/main.css -u autoprefixer -r",
+    "autoprefixer": "postcss dist/css/main.css -u autoprefixer --no-map -r",
     "lint:css": "stylelint scss/**/*.scss --config .stylelintrc.json",
     "lint:css:fix": "stylelint scss/**/*.scss --config .stylelintrc.json --fix",
     "serve": "servor dist --reload --browse"
