@@ -16,13 +16,6 @@
   position: relative;
   aspect-ratio: var(--sheet-ratio, #{$main-ratio});
 
-  *,
-  *::before,
-  *::after {
-    margin: 0;
-    box-sizing: border-box;
-  }
-
   input {
     display: none;
   }

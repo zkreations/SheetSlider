@@ -10,12 +10,6 @@
   position: relative;
   aspect-ratio: var(--sheet-ratio, 21/9);
 }
-.sheet *,
-.sheet *::before,
-.sheet *::after {
-  margin: 0;
-  box-sizing: border-box;
-}
 .sheet input {
   display: none;
 }
