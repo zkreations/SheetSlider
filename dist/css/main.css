@@ -1,6 +1,6 @@
 /*! Sheetslider v3.0.0 | by zkreations.com | MIT license github.com/zkreations/sheetslider */
 .sheet {
-  --sheet-accent: #059669;
+  --sheet-accent: #14b8a6;
   --sheet-space: calc(15px + 1.5625vw);
   --sheet-arrow-size: clamp(1rem, 2.5vw, 1.5rem);
   --sheet-duration: 1s;
