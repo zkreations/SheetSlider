@@ -106,7 +106,12 @@
   display: flex;
   gap: 0.25em;
   position: absolute;
-  inset: auto var(--sheet-space) 0;
+  inset: auto 0 0;
+}
+@media (width >= 768px) {
+  .sheet-dots {
+    inset: auto var(--sheet-space) 0;
+  }
 }
 .sheet-dots label {
   background-color: var(--sheet-dot-bg, rgba(255, 255, 255, 0.5));

@@ -4,7 +4,12 @@
     display: flex;
     gap: .25em;
     position: absolute;
-    inset: auto var(--sheet-space) 0;
+    inset: auto 0 0;
+    
+    // No spa
+    @media (width >= 768px) {
+      inset: auto var(--sheet-space) 0;
+    }
 
     label {
       background-color: var(--sheet-dot-bg, #{$dots-bg});
