@@ -32,7 +32,7 @@
   }
 
   // Show arrrows in mobile
-  @media (min-width: 768px) {
+  @media (width >= 768px) {
     &-arrows {
       top: auto;
       bottom: calc(var(--sheet-space) + var(--sheet-dot-size));

@@ -1,13 +1,13 @@
 // Create SheetEngine
-%activeItem {
+%active-item {
   --ss-active: 1;
 }
 
-%leftArrow {
+%left-arrow {
   --ss-arrow-r: 0;
 }
 
-%rightArrow {
+%right-arrow {
   --ss-arrow-r: 180;
 }
 
@@ -21,21 +21,21 @@
 
     // Set the active dot and item
     input:nth-child(#{$i}):checked ~ :where(&-content, &-dots) > :nth-child(#{$i}) {
-      @extend %activeItem;
+      @extend %active-item;
     }
 
     input:nth-child(#{$i}):checked ~ &-arrows {
       // Left arrow
       @if  $i != 1 {
         > :nth-child(#{$i - 1}) {
-          @extend %leftArrow;
+          @extend %left-arrow;
         }
       }
 
       // Right arrow
       @if  $i != $slider-items {
         > :nth-child(#{$i + 1}) {
-          @extend %rightArrow;
+          @extend %right-arrow;
         }
       }
     }
@@ -45,11 +45,13 @@
   // Note: :not(:only-child) is used to prevent the arrow from being hidden when there is only one item
   @at-root input:checked:first-of-type ~ &-arrows label:last-child:not(:only-child) {
     --ss-arrow-r: 0;
+
     order: -1;
   }
 
   @at-root input:checked:last-of-type ~ &-arrows label:first-child:not(:only-child) {
     --ss-arrow-r: 180;
+
     order: $slider-items;
   }
 }

@@ -14,8 +14,8 @@
 
       &::before {
         content: "";
-        background-color: var(--sheet-accent);
         display: block;
+        background-color: var(--sheet-accent);
         padding-bottom: var(--sheet-dot-size);
         opacity: var(--ss-active, 0);
         transition: opacity calc(var(--sheet-duration) * .5);
