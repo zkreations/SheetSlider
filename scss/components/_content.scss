@@ -12,7 +12,7 @@
   }
   
   &:not(&-fade, &-vertical) &-content {
-    transform: translate3d(calc((var(--ss-current,0) - 1) * -100%), 0, 0);
+    transform: translate3d(calc((var(--ss-i,0) - 1) * -100%), 0, 0);
   }
 }
 

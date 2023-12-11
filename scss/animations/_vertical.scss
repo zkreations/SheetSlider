@@ -6,6 +6,6 @@
   }
 
   &-vertical &-content {
-    transform: translate3d(0, calc((var(--ss-current,0) - 1) * -100%), 0);
+    transform: translate3d(0, calc((var(--ss-i,0) - 1) * -100%), 0);
   }
 }

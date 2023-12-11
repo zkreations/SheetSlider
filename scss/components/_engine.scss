@@ -16,7 +16,7 @@
   @for $i from 1 through ($slider-items) {
     // Set the current slide
     input:nth-child(#{$i}):checked ~ &-content {
-      --ss-current: #{$i};
+      --ss-i: #{$i};
     }
 
     // Set the active dot and item

@@ -24,7 +24,7 @@
   transition: transform var(--sheet-duration) var(--sheet-timing);
 }
 .sheet:not(.sheet-fade, .sheet-vertical) .sheet-content {
-  transform: translate3d(calc((var(--ss-current, 0) - 1) * -100%), 0, 0);
+  transform: translate3d(calc((var(--ss-i, 0) - 1) * -100%), 0, 0);
 }
 
 .sheet-item {
@@ -144,34 +144,34 @@ input:nth-child(9):checked ~ .sheet-arrows > :nth-child(10), input:nth-child(8):
 }
 
 input:nth-child(1):checked ~ .sheet-content {
-  --ss-current: 1;
+  --ss-i: 1;
 }
 input:nth-child(2):checked ~ .sheet-content {
-  --ss-current: 2;
+  --ss-i: 2;
 }
 input:nth-child(3):checked ~ .sheet-content {
-  --ss-current: 3;
+  --ss-i: 3;
 }
 input:nth-child(4):checked ~ .sheet-content {
-  --ss-current: 4;
+  --ss-i: 4;
 }
 input:nth-child(5):checked ~ .sheet-content {
-  --ss-current: 5;
+  --ss-i: 5;
 }
 input:nth-child(6):checked ~ .sheet-content {
-  --ss-current: 6;
+  --ss-i: 6;
 }
 input:nth-child(7):checked ~ .sheet-content {
-  --ss-current: 7;
+  --ss-i: 7;
 }
 input:nth-child(8):checked ~ .sheet-content {
-  --ss-current: 8;
+  --ss-i: 8;
 }
 input:nth-child(9):checked ~ .sheet-content {
-  --ss-current: 9;
+  --ss-i: 9;
 }
 input:nth-child(10):checked ~ .sheet-content {
-  --ss-current: 10;
+  --ss-i: 10;
 }
 input:checked:first-of-type ~ .sheet-arrows label:last-child:not(:only-child) {
   --ss-arrow-r: 0;
@@ -188,7 +188,7 @@ input:checked:last-of-type ~ .sheet-arrows label:first-child:not(:only-child) {
   inset: 0;
   opacity: var(--ss-active, 0);
   transition: opacity var(--sheet-duration) var(--sheet-timing);
-  pointer-events: var(--ss-current, none);
+  pointer-events: var(--ss-i, none);
 }
 
 .sheet-vertical {
@@ -196,5 +196,5 @@ input:checked:last-of-type ~ .sheet-arrows label:first-child:not(:only-child) {
   --ss-flex-direction: column;
 }
 .sheet-vertical .sheet-content {
-  transform: translate3d(0, calc((var(--ss-current, 0) - 1) * -100%), 0);
+  transform: translate3d(0, calc((var(--ss-i, 0) - 1) * -100%), 0);
 }
