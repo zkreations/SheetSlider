@@ -1,5 +1,5 @@
 {
-  "name": "sheetslider",
+  "name": "sheet-slider",
   "version": "3.0.0",
   "description": "Slider or carousel for images based on pure CSS",
   "main": "dist/css/main.min.css",
