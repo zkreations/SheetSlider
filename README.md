@@ -33,7 +33,7 @@ npm install sheet-slider
 ### CDN
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sheet-slider/dist/main.min.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sheet-slider@3/dist/main.min.css"/>
 ```
 
 ## How to use
