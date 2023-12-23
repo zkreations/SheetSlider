@@ -1,0 +1,50 @@
+{% assign num_items = include.num_items | default: 3 %}
+{% assign items = include.items | default: (1..num_items) %}
+{% assign demo = include.demo | default: false %}
+{% assign prefix = include.prefix | default: 'n' %}
+{% assign class = include.class | default: '' %}
+{% assign slug = include.slug | default: 'main' %}
+
+<div class="sheet {{ class }}">
+  {% for item in items %}
+    {% assign i = forloop.index %}
+    <input id="{{ prefix }}{{ i }}" type="radio" name="{{ prefix }}" {% if i == 1 %}checked{% endif %}>
+  {% endfor %}
+
+  <div class="sheet-content">
+    {% for item in items %}
+      {% assign i = forloop.index %}
+      <div class="sheet-item">
+        {% if demo %}
+          <div class="sheet-image demo-item">{{ i }}</div>
+        {% else %}
+          <img class="sheet-image" src="assets/img/{{ slug }}/{{ i }}.jpg" alt="imgText"/>
+        {% endif %}
+        {% if item.title and item.description %}
+          <div class="sheet-meta">
+            <h4 class="sheet-title">{{ item.title }}</h4>
+            <p class="sheet-text">{{ item.description }}</p>
+          </div>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+
+  {% if include.dots %}
+    <div class="sheet-dots">
+      {% for item in items %}
+        {% assign i = forloop.index %}
+        <label for="{{ prefix }}{{ i }}"></label>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  {% if include.arrows %}
+    <div class="sheet-arrows">
+      {% for item in items %}
+        {% assign i = forloop.index %}
+        <label for="{{ prefix }}{{ i }}"></label>
+      {% endfor %}
+    </div>
+  {% endif %}
+</div>

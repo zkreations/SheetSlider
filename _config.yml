@@ -1,0 +1,34 @@
+
+plugins:
+  - jekyll-include-cache
+  - jekyll-minifier
+
+exclude:
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+
+sass:
+    style: compressed
+
+features:
+  - title: Lightweight
+    icon: droplet
+    description: A lightweight and powerful solution that doesn't rely on JavaScript and compresses to just 1kb (Brotli).
+  - title: Without JavaScript
+    icon: microchip
+    description: A engine written from scratch using only CSS. None of its functions require JavaScript.
+  - title: Customizable
+    icon: palette
+    description: Easily edit visual aspects using SASS during development, or modify variables in production.
+  - title: Modular
+    icon: cube
+    description: Use only what you need. If you don't require buttons, text, or navigation, simply exclude them.
+  - title: Performance
+    icon: meteor
+    description: Due to its minimal dependency and pure CSS implementation, the performance is unparalleled.
+  - title: Open source
+    icon: open-source
+    description: Make the slider an integral part of all your projects without limitations, thanks to the MIT license.

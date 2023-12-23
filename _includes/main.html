@@ -1,0 +1,54 @@
+<main class="main">
+  <section class="section">
+    <div class="main-content container">
+      {% include slider.html items=site.data.sheet_items prefix='a' dots=true arrows=true %}
+      <div class="details">
+        <p>{{ page.details }}</p>
+        <div class="details-links">
+          <a href="https://github.com/zkreations/SheetSlider?tab=readme-ov-file#install" class="btn btn-primary" target="_blank">Get started</a>
+          <a href="https://github.com/zkreations/SheetSlider" class="btn" target="_blank">View on GitHub</a>
+        </div>
+      </div>
+      <div class="features grid">
+        {% for feature in site.features %}
+        <div class="feature">
+          <div class="feature-icon">
+            {% include icon.html icon=feature.icon %}
+          </div>
+          <h3 class="feature-title">{{ feature.title }}</h3>
+          <p class="feature-text">{{ feature.description }}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="main-content container">
+      {% include slider.html prefix='b' class='sheet-fade' demo=true dots=true arrows=true %}
+      <div class="details">
+        <h2>Fade effect</h2>
+        <p>Sheet Slider can be used with a fade effect, just add the <code>sheet-fade</code> class to the parent element.</p>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="main-content container">
+      {% include slider.html prefix='d' class='sheet-vertical' demo=true dots=true arrows=true %}
+      <div class="details">
+        <h2>Vertical slider</h2>
+        <p>Create a vertical slider by adding the <code>sheet-vertical</code> class to the parent element.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="main-content container">
+      <div class="details">
+        <h2>Contributing</h2>
+        <p>If you want, you can also help me maintain this and more projects by buying me a coffee ☕. I will appreciate it very much 👏.</p>
+        <div class="details-links">
+          <a href="https://ko-fi.com/zkreations" class="btn btn-primary" target="_blank">Buy me a coffee</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

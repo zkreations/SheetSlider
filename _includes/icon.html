@@ -1,0 +1,22 @@
+{% assign icon = include.icon | default: "cube" %}
+
+<svg class="i i-{{ icon }}" viewBox="0 0 24 24">
+  {% if icon == "meteor" %}
+    <circle cx="9.5" cy="14.5" r="3.5"></circle>
+    <path d="M8 5 4 9a1 1 0 0 0 11 11l7-7m-6-2 6-6m-6-1 2-2m-5 5h0"></path>
+  {% elsif icon == "droplet" %}
+    <path d="m12 1 6 6A9 9 0 1 1 6 7Z"></path>
+  {% elsif icon == "palette" %}
+    <circle cx="14" cy="7" r=".5"></circle>
+    <circle cx="9" cy="8" r=".5"></circle>
+    <circle cx="7" cy="13" r=".5"></circle>
+    <path d="M12 22a10 10 0 1 1 10-10q0 4-5 4t-4 3-1 3Z"></path>
+  {% elsif icon == "open-source" %}
+    <path d="M16 21.2a10 10 0 1 0-8 0l2.4-6.1a3.5 3.5 0 1 1 3.2 0Z"></path>
+  {% elsif icon == "microchip" %}
+    <rect width="16" height="16" x="4" y="4" rx="2"></rect>
+    <path d="M9 9h6v6H9zm0-8v3m6-3v3M9 20v3m6-3v3m5-14h3m-3 5h3M1 9h3m-3 5h3"></path>
+  {% else %}
+    <path d="m12 2 9 5v10l-9 5-9-5V7zM3 7l9 5 9-5m-9 5v10"></path>
+  {% endif %}
+</svg>

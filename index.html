@@ -1,164 +1,38 @@
-<!doctype html>
-<html>
+---
+title: Sheet Slider
+slogan: Slider for images as lightweight as a leaf
+description: Slider created with pure CSS, lightweight, and powerful.
+details: A pure CSS slider with no dependencies. Designed to be as lightweight and fast as possible.
+version: v3.0.0
+---
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-<title>Sheet Slider</title>	
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link type="image/x-icon" rel="icon" href="http://www.zkreations.com/favicon.ico" />
-	<!--reset y aspecto-->
-	<link type="text/css" rel="stylesheet" href="libs/css/whale.min.css"/>
-	<link type="text/css" rel="stylesheet" href="libs/css/estilos.css"/>
-	
-	<!--Slider-->
-	<link rel="stylesheet" href="dist/sheetslider.min.css"/>
-	
+  <title>{{ page.title }}</title>
+  <meta name="description" content="{{ page.description }}">
+  <link href='https://fonts.bunny.net' rel='preconnect'/>
+
+  <meta property="og:title" content="{{ page.title }}">
+  <meta property="og:description" content="{{ page.description }}">
+  <meta property="og:image" content="https://meteoricons.com/assets/social-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@zkreations">
+
+  <link rel="shortcut icon" type="image/png" href="assets/favicon.png">
+  <link href="assets/main.min.css" rel="stylesheet">
+  <link href="assets/main.css" rel="stylesheet">
+
+  <link as='style' href='https://fonts.bunny.net/css?display=swap&family=roboto:400,400i,500' rel='preload'/>
+  <link href='https://fonts.bunny.net/css?display=swap&family=roboto:400,400i,500' rel='stylesheet'/>
 </head>
-
-<body>
-
-<header>
-    <h1>Sheet Slider</h1>
-    <span>Sliding images with pure CSS</span>
-</header>
-<div class="main box">
-
-
-<!--Sheet Slider-->
-<div class="sheetSlider sh-default sh-auto">
-   <input id="s1" type="radio" name="slide1" checked/> 
-   <input id="s2" type="radio" name="slide1"/> 
-   <input id="s3" type="radio" name="slide1"/> 
-   <input id="s4" type="radio" name="slide1"/> 
-   <input id="s5" type="radio" name="slide1"/> 
-   <div class="sh__content">
-
-      <!-- Slider Item -->
-      <div class="sh__item">
-         <img src="img/slide-img01.jpg" alt="imgText"/>
-         <!-- Item Info -->
-         <div class="sh__meta">
-            <h4>Artwork surreal</h4>
-            <span>Secondary text without link</span>
-         </div>
-      </div>
-
-      <!-- Slider Item -->
-      <div class="sh__item">
-         <img src="img/slide-img02.jpg" alt="imgText"/>
-         <!-- Item Info -->
-         <div class="sh__meta">
-            <h4>2 Weeks</h4>
-            <span>Secondary text <a href="#urlPage">with link</a></span>
-         </div>
-      </div>
-
-      <!-- Slider Item -->
-      <div class="sh__item">
-         <img src="img/slide-img03.jpg" alt="imgText"/>
-         <!-- Item Info -->
-         <div class="sh__meta">
-            <h4>Cat under a carpet</h4>
-            <span>Secondary text without link</span>
-         </div>
-      </div>
-
-      <!-- Slider Item -->
-      <div class="sh__item">
-         <img src="img/slide-img04.jpg" alt="imgText"/>
-         <!-- Item Info -->
-         <div class="sh__meta">
-            <h4>Sheet</h4>
-            <span>Secondary text without link</span>
-         </div>
-      </div>
-
-      <!-- Slider Item -->
-      <div class="sh__item">
-         <img src="img/slide-img05.jpg" alt="imgText"/>
-         <!-- Item Info -->
-         <div class="sh__meta">
-            <h4>Cute girl and cat</h4>
-            <span>Secondary text without link</span>
-         </div>
-      </div>
-      
-   </div><!-- .sh__content -->
-
-   <!--botones -->
-   <div class="sh__btns">
-      <label for="s1"></label>
-      <label for="s2"></label>
-      <label for="s3"></label>
-      <label for="s4"></label>
-      <label for="s5"></label>
-   </div><!-- .sh__btns -->
-
-   <!--flechas-->
-   <div class="sh__arrows">
-      <label for="s1"></label>
-      <label for="s2"></label>
-      <label for="s3"></label>
-      <label for="s4"></label>
-      <label for="s5"></label>
-   </div><!-- .sh__arrows -->
-   
-   <!--Control-->
-   <button class="sh-control"></button>  
-</div><!-- .sheetSlider -->
-
-
-
-<h2>Instalar</h2>
-<p>Sube el archivo <strong>sheetslider.min.css</strong> e incluyelo arriba de <code>&lt;/head&gt;</code></p>
-
-<pre class="code">&lt;link rel="stylesheet" href="sheetslider.min.css"/&gt;</pre>
-
-<p>O cargalo desde una <strong>cdn</strong> con jsdelivr:</p>
-
-<pre class="code">&lt;link href="//cdn.jsdelivr.net/gh/zkreations/SheetSlider@2.2.0/dist/sheetslider.min.css" rel="stylesheet"/&gt;</pre>
-
-<h2>Estructura</h2>
-<p>Algunos elementos de la estructura html son opcionales y no impedirán que el slider funcione. Esta sería la <strong>estructura básica</strong> sin botonera y sin textos:</p>
-
-<pre class="code">&lt;div class="sheetSlider sh-default"&gt;
-   &lt;input id="s1" type="radio" name="slide1" checked/&gt; 
-   &lt;input id="s2" type="radio" name="slide1"/&gt;
-   &lt;div class="sh__content"&gt;
-      &lt;div class="sh__item"&gt;&lt;img src="img/img01.jpg"/&gt;&lt;/div&gt;
-      &lt;div class="sh__item"&gt;&lt;img src="img/img02.jpg"/&gt;&lt;/div&gt;
-   &lt;/div&gt;
-   &lt;div class="sh__arrows"&gt;
-      &lt;label for="s1"&gt;&lt;/label&gt;
-      &lt;label for="s2"&gt;&lt;/label&gt;
-   &lt;/div&gt;
-&lt;/div&gt;</pre>
-
-<h2>Animación</h2>
-<p>Las animaciones las controla la clase <code>sh-default</code>, es obligatoria y establece la animación por defecto. Cambia <code>default</code> por <code>vertical</code>, <code>fade</code> o <code>flip</code> para cambiar el efecto de transición:</p>
-
-<pre class="code">&lt;div class="sheetSlider sh-vertical"&gt;
-&lt;div class="sheetSlider sh-fade"&gt;
-&lt;div class="sheetSlider sh-flip"&gt;</pre>
-
-<h2>Auto slide</h2>
-<p>El slider carece de animación automatica mediante css puro, pero si se desea, aloja el archivo <strong>sheetslider.min.js</strong> e incluyelo en tu proyecto arriba de <code>&lt;/body&gt;</code></p>
-
-<pre class="code">&lt;script src="sheetslider.min.js"&gt;&lt;/script&gt;</pre>
-
-<p>O cargalo desde una <strong>cdn</strong> con jsdelivr:</p>
-
-<pre class="code">&lt;link href="//cdn.jsdelivr.net/gh/zkreations/SheetSlider@2.2.0/dist/sheetslider.min.js" rel="stylesheet"/&gt;</pre>
-
-<p>Ahora agrega la clase <strong>sh__auto</strong> al contenedor principal de la siguiente manera:</p>
-
-<pre class="code">&lt;div class="sheetSlider sh-default sh-auto"&gt;</pre>
-
-</div><!-- .main .box -->
-
-<footer>
-    <p>Created by <a href="http://www.zkreations.com">zkreations</a> - Made with <strong class="love">♥</strong> <a href="https://github.com/zkreations/SheetSlider">by Github</a></p>
-</footer>
-<script src="dist/sheetslider.min.js"></script>
+<body class="preload">
+  <div class="template">
+    {%- include header.html -%}
+    {%- include main.html -%}
+    {%- include footer.html -%}
+  </div>
 </body>
 </html>
