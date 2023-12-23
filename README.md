@@ -3,7 +3,7 @@
 
   # SheetSlider
 
-  <p>A pure CSS slider with no dependencies. Designed to be as lightweight and fast as possible. Compresses to just 1kb (Brotli).<p>
+  <p>A pure CSS slider with no dependencies. Designed to be as lightweight and fast as possible.<p>
 
   <p><a href="https://zkreations.github.io/SheetSlider/"><strong> Live Demo &rarr;</strong></a></p>
 
