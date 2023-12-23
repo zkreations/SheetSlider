@@ -1,5 +1,5 @@
 <div align="center">
-  <img width='100' src="https://raw.githubusercontent.com/zkreations/SheetSlider/master/.github/logo.png" align="center" />
+  <img width='50' src="https://raw.githubusercontent.com/zkreations/SheetSlider/master/.github/logo.png" align="center" />
 
   # SheetSlider
 
