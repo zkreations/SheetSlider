@@ -2,7 +2,7 @@
 .sheet {
   &-dots {
     display: flex;
-    gap: .25em;
+    gap: var(--sheet-dot-gap, #{$dots-gap});
     position: absolute;
     inset: auto 0 0;
     
