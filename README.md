@@ -123,6 +123,7 @@ Define new values for the variables in your CSS file or in the `:root` selector.
 | Variable                | Description
 | ----------------------- | -------------
 | `--sheet-accent`        | Accent color
+| `--sheet-ratio`         | Aspect ratio
 | `--sheet-space`         | Space of the elements
 | `--sheet-arrow-size`    | Size of the arrows
 | `--sheet-duration`      | Animation duration
