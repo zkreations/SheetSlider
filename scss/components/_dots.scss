@@ -1,0 +1,34 @@
+// Create slider pagination dots
+.sheet {
+  &-dots {
+    display: flex;
+    gap: var(--sheet-dot-gap, #{$dots-gap});
+    position: absolute;
+    inset: auto 0 0;
+    
+    // No spa
+    @media (width >= 768px) {
+      inset: auto var(--sheet-space) 0;
+    }
+
+    label {
+      background-color: var(--sheet-dot-bg, #{$dots-bg});
+      transition: background-color calc(var(--sheet-duration) * .5);
+      flex: 1 0 auto;
+      cursor: pointer;
+
+      &::before {
+        content: "";
+        display: block;
+        background-color: var(--sheet-accent);
+        padding-bottom: var(--sheet-dot-size);
+        opacity: var(--ss-active, 0);
+        transition: opacity calc(var(--sheet-duration) * .5);
+      }
+
+      &:hover {
+        background-color: var(--sheet-dot-hover, #{$dots-bg-hover});
+      }
+    }
+  }
+}

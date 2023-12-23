@@ -1,0 +1,200 @@
+/*! Sheetslider v3.0.0 | by zkreations.com | MIT license github.com/zkreations/sheetslider */
+.sheet {
+  --sheet-accent: #14b8a6;
+  --sheet-space: calc(15px + 1.5625vw);
+  --sheet-arrow-size: clamp(1rem, 2.5vw, 1.5rem);
+  --sheet-duration: 1s;
+  --sheet-dot-size: 6px;
+  --sheet-timing: cubic-bezier(0.5, 0, 0.1, 1);
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: var(--sheet-ratio, 21/9);
+}
+.sheet input {
+  display: none;
+}
+
+.sheet-content {
+  position: relative;
+  height: 100%;
+  flex-direction: var(--ss-flex-direction, row);
+}
+.sheet:not(.sheet-fade) .sheet-content {
+  display: flex;
+  transition: transform var(--sheet-duration) var(--sheet-timing);
+}
+.sheet:not(.sheet-fade, .sheet-vertical) .sheet-content {
+  transform: translate3d(calc((var(--ss-i, 0) - 1) * -100%), 0, 0);
+}
+
+.sheet-item {
+  overflow: hidden;
+}
+.sheet:not(.sheet-fade) .sheet-item {
+  flex: 1 0 100%;
+  position: relative;
+}
+.sheet-meta {
+  font-weight: 500;
+  color: var(--sheet-text-color, #fff);
+  text-shadow: var(--sheet-text-shadow, 0 1px 1px rgba(0, 0, 0, 0.3), 0 1px 5px rgba(0, 0, 0, 0.15));
+  position: absolute;
+  top: var(--sheet-space);
+  left: var(--sheet-space);
+  opacity: var(--ss-active, 0);
+  transform: var(--ss-active, translate3d(0, 4em, 0));
+  transition-delay: calc(var(--sheet-duration) * 0.5);
+  transition-duration: calc(var(--sheet-duration) * 0.75);
+  transition-property: transform, opacity;
+}
+.sheet-meta a {
+  color: var(--sheet-accent);
+  text-decoration: none;
+}
+.sheet-image {
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.sheet-title {
+  font-size: var(--sheet-title-size, clamp(1.25rem, 2.5vw, 2rem));
+}
+.sheet-text {
+  font-size: var(--sheet-text-size, clamp(0.875rem, 2vw, 1.125rem));
+}
+
+.sheet-arrows {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  transition: transform calc(var(--sheet-duration) * 0.5);
+  flex-direction: var(--ss-flex-direction, row);
+}
+.sheet-arrows label {
+  padding: var(--sheet-arrow-padding, clamp(0.75rem, 2.5vw, 1rem));
+  background-color: var(--sheet-arrow-bg, #fff);
+  display: var(--ss-arrow-r, none);
+  transition: opacity calc(var(--sheet-duration) * 0.5);
+  cursor: pointer;
+}
+.sheet-arrows label:hover {
+  opacity: 0.8;
+}
+.sheet-arrows label::before {
+  content: "";
+  transform: rotate(calc((var(--ss-initial-arrow-r, 0) + var(--ss-arrow-r)) * 1deg));
+  background-image: var(--sheet-arrow, url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='m17 5-2-2-9 9 9 9 2-2-7-7Z'/></svg>"));
+  width: var(--sheet-arrow-size);
+  height: var(--sheet-arrow-size);
+  transition: background-color var(--sheet-duration);
+  display: block;
+}
+@media (width >= 768px) {
+  .sheet-arrows {
+    top: auto;
+    bottom: calc(var(--sheet-space) + var(--sheet-dot-size));
+  }
+  .sheet:not(:hover) .sheet-arrows {
+    transform: translateX(110%);
+  }
+}
+
+.sheet-dots {
+  display: flex;
+  gap: var(--sheet-dot-gap, 0.25rem);
+  position: absolute;
+  inset: auto 0 0;
+}
+@media (width >= 768px) {
+  .sheet-dots {
+    inset: auto var(--sheet-space) 0;
+  }
+}
+.sheet-dots label {
+  background-color: var(--sheet-dot-bg, rgba(255, 255, 255, 0.5));
+  transition: background-color calc(var(--sheet-duration) * 0.5);
+  flex: 1 0 auto;
+  cursor: pointer;
+}
+.sheet-dots label::before {
+  content: "";
+  display: block;
+  background-color: var(--sheet-accent);
+  padding-bottom: var(--sheet-dot-size);
+  opacity: var(--ss-active, 0);
+  transition: opacity calc(var(--sheet-duration) * 0.5);
+}
+.sheet-dots label:hover {
+  background-color: var(--sheet-dot-hover, rgba(255, 255, 255, 0.75));
+}
+
+input:nth-child(10):checked ~ :where(.sheet-content, .sheet-dots) > :nth-child(10), input:nth-child(9):checked ~ :where(.sheet-content, .sheet-dots) > :nth-child(9), input:nth-child(8):checked ~ :where(.sheet-content, .sheet-dots) > :nth-child(8), input:nth-child(7):checked ~ :where(.sheet-content, .sheet-dots) > :nth-child(7), input:nth-child(6):checked ~ :where(.sheet-content, .sheet-dots) > :nth-child(6), input:nth-child(5):checked ~ :where(.sheet-content, .sheet-dots) > :nth-child(5), input:nth-child(4):checked ~ :where(.sheet-content, .sheet-dots) > :nth-child(4), input:nth-child(3):checked ~ :where(.sheet-content, .sheet-dots) > :nth-child(3), input:nth-child(2):checked ~ :where(.sheet-content, .sheet-dots) > :nth-child(2), input:nth-child(1):checked ~ :where(.sheet-content, .sheet-dots) > :nth-child(1) {
+  --ss-active: 1;
+}
+
+input:nth-child(10):checked ~ .sheet-arrows > :nth-child(9), input:nth-child(9):checked ~ .sheet-arrows > :nth-child(8), input:nth-child(8):checked ~ .sheet-arrows > :nth-child(7), input:nth-child(7):checked ~ .sheet-arrows > :nth-child(6), input:nth-child(6):checked ~ .sheet-arrows > :nth-child(5), input:nth-child(5):checked ~ .sheet-arrows > :nth-child(4), input:nth-child(4):checked ~ .sheet-arrows > :nth-child(3), input:nth-child(3):checked ~ .sheet-arrows > :nth-child(2), input:nth-child(2):checked ~ .sheet-arrows > :nth-child(1) {
+  --ss-arrow-r: 0;
+}
+
+input:nth-child(9):checked ~ .sheet-arrows > :nth-child(10), input:nth-child(8):checked ~ .sheet-arrows > :nth-child(9), input:nth-child(7):checked ~ .sheet-arrows > :nth-child(8), input:nth-child(6):checked ~ .sheet-arrows > :nth-child(7), input:nth-child(5):checked ~ .sheet-arrows > :nth-child(6), input:nth-child(4):checked ~ .sheet-arrows > :nth-child(5), input:nth-child(3):checked ~ .sheet-arrows > :nth-child(4), input:nth-child(2):checked ~ .sheet-arrows > :nth-child(3), input:nth-child(1):checked ~ .sheet-arrows > :nth-child(2) {
+  --ss-arrow-r: 180;
+}
+
+input:nth-child(1):checked ~ .sheet-content {
+  --ss-i: 1;
+}
+input:nth-child(2):checked ~ .sheet-content {
+  --ss-i: 2;
+}
+input:nth-child(3):checked ~ .sheet-content {
+  --ss-i: 3;
+}
+input:nth-child(4):checked ~ .sheet-content {
+  --ss-i: 4;
+}
+input:nth-child(5):checked ~ .sheet-content {
+  --ss-i: 5;
+}
+input:nth-child(6):checked ~ .sheet-content {
+  --ss-i: 6;
+}
+input:nth-child(7):checked ~ .sheet-content {
+  --ss-i: 7;
+}
+input:nth-child(8):checked ~ .sheet-content {
+  --ss-i: 8;
+}
+input:nth-child(9):checked ~ .sheet-content {
+  --ss-i: 9;
+}
+input:nth-child(10):checked ~ .sheet-content {
+  --ss-i: 10;
+}
+input:checked:first-of-type ~ .sheet-arrows label:last-child:not(:only-child) {
+  --ss-arrow-r: 0;
+  order: -1;
+}
+
+input:checked:last-of-type ~ .sheet-arrows label:first-child:not(:only-child) {
+  --ss-arrow-r: 180;
+  order: 10;
+}
+
+.sheet-fade .sheet-item {
+  position: absolute;
+  inset: 0;
+  opacity: var(--ss-active, 0);
+  transition: opacity var(--sheet-duration) var(--sheet-timing);
+  pointer-events: var(--ss-i, none);
+}
+
+.sheet-vertical {
+  --ss-initial-arrow-r: 90;
+  --ss-flex-direction: column;
+}
+.sheet-vertical .sheet-content {
+  transform: translate3d(0, calc((var(--ss-i, 0) - 1) * -100%), 0);
+}

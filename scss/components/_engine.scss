@@ -1,0 +1,57 @@
+// Create SheetEngine
+%active-item {
+  --ss-active: 1;
+}
+
+%left-arrow {
+  --ss-arrow-r: 0;
+}
+
+%right-arrow {
+  --ss-arrow-r: 180;
+}
+
+// Code that moves the slider
+.sheet {
+  @for $i from 1 through ($slider-items) {
+    // Set the current slide
+    input:nth-child(#{$i}):checked ~ &-content {
+      --ss-i: #{$i};
+    }
+
+    // Set the active dot and item
+    input:nth-child(#{$i}):checked ~ :where(&-content, &-dots) > :nth-child(#{$i}) {
+      @extend %active-item;
+    }
+
+    input:nth-child(#{$i}):checked ~ &-arrows {
+      // Left arrow
+      @if  $i != 1 {
+        > :nth-child(#{$i - 1}) {
+          @extend %left-arrow;
+        }
+      }
+
+      // Right arrow
+      @if  $i != $slider-items {
+        > :nth-child(#{$i + 1}) {
+          @extend %right-arrow;
+        }
+      }
+    }
+  }
+
+  // if first or last item is checked, change the order of the arrows
+  // Note: :not(:only-child) is used to prevent the arrow from being hidden when there is only one item
+  @at-root input:checked:first-of-type ~ &-arrows label:last-child:not(:only-child) {
+    --ss-arrow-r: 0;
+
+    order: -1;
+  }
+
+  @at-root input:checked:last-of-type ~ &-arrows label:first-child:not(:only-child) {
+    --ss-arrow-r: 180;
+
+    order: $slider-items;
+  }
+}

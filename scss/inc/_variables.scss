@@ -1,0 +1,30 @@
+// Global
+$slider-items: 10 !default;
+
+// General
+$main-color: #14b8a6 !default;
+$main-transition: 1s !default;
+$main-space: calc(15px + 1.5625vw) !default;
+$main-ratio: "21/9" !default;
+$font-weight: 500 !default;
+$transition-duration: 1s !default;
+$transition-timing: cubic-bezier(.5,0,.1,1) !default;
+
+// Texts
+$text-color: #fff !default;
+$title-size: clamp(1.25rem, 2.5vw, 2rem) !default;
+$text-size: clamp(.875rem, 2vw, 1.125rem) !default;
+$text-shadow: 0 1px 1px rgb(0 0 0 / 30%), 0 1px 5px rgb(0 0 0 / 15%) !default;
+
+// Dots
+$dots-bg: rgb(255 255 255 / 50%) !default;
+$dots-bg-hover: rgb(255 255 255 / 75%) !default;
+$dots-size: 6px !default;
+$dots-gap: .25rem !default;
+
+// Arrows
+$arrow-bg: #fff !default;
+$arrow-bg-hover: rgb(255 255 255 / 90%) !default;
+$arrow-padding: clamp(.75rem, 2.5vw, 1rem);
+$arrow-size: clamp(1rem, 2.5vw, 1.5rem) !default;
+$arrow-svg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='m17 5-2-2-9 9 9 9 2-2-7-7Z'/></svg>");

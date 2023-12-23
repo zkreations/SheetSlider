@@ -1,0 +1,48 @@
+// Create slider items
+.sheet {
+  &-item {
+    overflow: hidden;
+  }
+
+  &:not(&-fade) &-item {
+    flex: 1 0 100%;
+    position: relative;
+  }
+
+  &-meta {
+    font-weight: $font-weight;
+    color: var(--sheet-text-color, #{$text-color});
+    text-shadow: var(--sheet-text-shadow, #{$text-shadow});
+    position: absolute;
+    top: var(--sheet-space);
+    left: var(--sheet-space);
+    opacity: var(--ss-active, 0);
+    transform: var(--ss-active, translate3d(0, 4em, 0));
+    transition-delay: calc(var(--sheet-duration) * .5);
+    transition-duration: calc(var(--sheet-duration) * .75);
+    transition-property: transform, opacity;
+
+    a {
+      color: var(--sheet-accent);
+      text-decoration: none;
+    }
+  }
+
+  &-image {
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  &-title {
+    font-size: var(--sheet-title-size, #{$title-size});
+  }
+
+  &-text {
+    font-size: var(--sheet-text-size, #{$text-size});
+  }
+}
+
+
+

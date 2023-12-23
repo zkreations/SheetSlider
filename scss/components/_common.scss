@@ -1,0 +1,23 @@
+
+// Prefix
+// Variables with the prefix "--sheet" are safe to modify
+// Variables with the prefix "--ss" should not be modified
+
+.sheet {
+  // You can change these variables
+  --sheet-accent: #{$main-color};
+  --sheet-space: #{$main-space};
+  --sheet-arrow-size: #{$arrow-size};
+  --sheet-duration: #{$transition-duration};
+  --sheet-dot-size: #{$dots-size};
+  --sheet-timing: #{$transition-timing};
+
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: var(--sheet-ratio, #{$main-ratio});
+
+  input {
+    display: none;
+  }
+}
+

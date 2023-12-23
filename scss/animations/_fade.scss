@@ -1,0 +1,11 @@
+
+// Fade animation
+.sheet {
+  &-fade &-item {
+    position: absolute;
+    inset: 0;
+    opacity: var(--ss-active, 0);
+    transition: opacity var(--sheet-duration) var(--sheet-timing);
+    pointer-events: var(--ss-i, none);
+  }
+}
