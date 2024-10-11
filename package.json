@@ -10,11 +10,10 @@
   ],
   "scripts": {
     "dev": "npm-run-all --parallel watch:css serve",
-    "compile": "npm-run-all build:css autoprefixer minify:css",
-    "build:css": "sass --style expanded --no-source-map ./scss/:./dist/css/",
+    "compile": "npm-run-all compile:css minify:css",
+    "compile:css": "sass --style expanded --no-source-map ./scss/:./dist/css/",
     "minify:css": "cleancss -O2 --with-rebase -o dist/css/main.min.css dist/css/main.css",
-    "watch:css": "nodemon --watch scss/ --ext scss --exec \"npm run build:css\"",
-    "autoprefixer": "postcss dist/css/main.css -u autoprefixer --no-map -r",
+    "watch:css": "sass --watch src/scss:dist/css --style expanded --no-source-map",
     "lint:css": "stylelint scss/**/*.scss --config .stylelintrc.json",
     "lint:css:fix": "stylelint scss/**/*.scss --config .stylelintrc.json --fix",
     "serve": "servor dist --reload --browse"
@@ -31,15 +30,12 @@
   },
   "homepage": "https://github.com/zkreations/SheetSlider#readme",
   "devDependencies": {
-    "autoprefixer": "^10.4.16",
-    "browserslist": "^4.22.2",
+    "browserslist": "^4.24.0",
     "clean-css-cli": "^5.6.3",
-    "nodemon": "^3.0.2",
     "npm-run-all": "^4.1.5",
-    "postcss-cli": "^10.1.0",
-    "sass": "^1.69.5",
+    "sass": "^1.79.5",
     "servor": "^4.0.2",
-    "stylelint": "^15.11.0",
-    "stylelint-config-standard-scss": "^11.1.0"
+    "stylelint": "^16.9.0",
+    "stylelint-config-standard-scss": "^13.1.0"
   }
 }
